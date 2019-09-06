@@ -2,26 +2,26 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/CharlesGhanime/.oh-my-zsh"
+export ZSH="/Users/cghanime/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cobalt2"
+ZSH_THEME="darkblood"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
- HYPHEN_INSENSITIVE="true"
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -39,7 +39,7 @@ ZSH_THEME="cobalt2"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -57,7 +57,8 @@ ZSH_THEME="cobalt2"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -95,32 +96,44 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#root = toor42
-#alias vim = "nvim"
-
-#cool shell commands :
-# search and replace : sed -i '' 's/text_to_be_replaced/text_replacing/g' *.c
-# =======================valgrind options=======================================
-# --tool=memcheck, --leak-check=yes/full,
-# --show-leak-kinds=all, --track-origins=yes, --show-reachable=yes,
-# --error-limit=no 
-# -v & -vv = verbose & even more verbose 
-# -g = compile in debugging mode
-# -s <==> --show-error-list=yes
-# ==============================================================================
-# -g3 fsanitize=address,undefined
 #
-
-alias gcc="gcc -Wall -Werror -Wextra -Weverything"
+#
+################################################################################
+##============================ Cool Shell Commands ===========================##
+################################################################################
+##                                                                            ##
+##                             Search and replace :                           ##
+##           sed -i '' 's/text_to_be_replaced/text_replacing/g' *.c           ##
+##                                                                            ##
+################################################################################
+## ============================= Valgrind Options =========================== ##
+################################################################################
+## --tool=memcheck, --leak-check=yes/full,                                    ##
+## --show-leak-kinds=all, --track-origins=yes, --show-reachable=yes,          ##
+## --error-limit=no                                                           ##
+## -v & -vv = verbose & even more verbose                                     ##
+## -g = compile in debugging mode                                             ##
+## -s <==> --show-error-list=yes                                              ##
+################################################################################
+## ============================ Fsanitize Options =========================== ##
+################################################################################
+##                  add -g3 fsanitize=address,undefined to gcc                ##
+##                                                                            ##
+##                                                                            ##
+##                                                                            ##
+##                                                                            ##
+################################################################################
+##=================================== ALIASES ================================##
+################################################################################
+alias cc="gcc -Wall -Wextra -Werror -Weverything"
+alias gfc="gcc -Wall -Werror -Wextra -Weverything -g3 -fsanitize=address,undefined"
+alias normi="Norminette -R CheckForbiddenSourceHeader"
+alias flags="gcc -g3 -Wall -Wextra -Werror"
 alias vg="valgrind --tool=memcheck --leak-check=full"
 alias vgf="valgrind -g -vv --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origins=yes --show-reachable=yes --error-limit=no"
-alias normi="norminette -R CheckForbiddenSourceHeader"
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+alias 42fc="sh ~/42/42FileChecker/42FileChecker.sh"
+################################################################################
 
-source /Users/CharlesGhanime/.Sublivim/sublivimrc.sh
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export GEM_PATH="$PATH:$HOME/.rvm/gems/"
-#export PATH=/Users/CharlesGhanime/.brew/bin:/Users/CharlesGhanime/.brew/bin:/Users/CharlesGhanime/.rvm/gems/ruby-2.6.0-preview2/bin:/Users/CharlesGhanime/.rvm/gems/ruby-2.6.0-preview2@global/bin:/Users/CharlesGhanime/.rvm/rubies/ruby-2.6.0-preview2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/CharlesGhanime/.rvm/bin
+#source /Users/cghanime/.vimrc
+export PATH=$HOME/.brew/bin:$PATH
+export PATH=$HOME/.brew/bin:$PATH
