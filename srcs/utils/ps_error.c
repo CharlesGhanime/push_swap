@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_check_double.c                                  :+:      :+:    :+:   */
+/*   ps_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 05:07:39 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/06 16:23:28 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/06 16:24:03 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/06 16:28:47 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-void	ps_check_double(t_list *lst, int value)
+void	ps_error()
 {
-	t_list	*element;
-
-	if (lst)
-	{
-		element = lst;
-		while (element)
-		{
-			if (element->value == value)
-				ps_error();
-			element = element->next;
-		}
-	}
+	write(1, "Error\n", 6);
 }
