@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:30:38 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/08 13:43:26 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/09 05:04:07 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 /*
 typedef struct			s_node
 {
@@ -60,12 +61,32 @@ int						ps_strlen(char *s);
 /*
 ** UTILS FUNCTIONS
 */
-void					ps_swap(t_list *lst);
-void					ps_swap_ss(t_list *lst_a, t_list *lst_b);
-void					ps_push(t_list *lst_1, t_list *lst_2);
+
+void					ps_ok();
+void					ps_ko();
+void					ps_error();
+void					ps_check_double(t_list *lst, int value);
+void					ps_swap_a(t_list *stack_a);
+void					ps_swap_b(t_list *stack_b);
+void					ps_swap_ss(t_list *stack_a, t_list *stack_b);
+void					ps_push_a(t_list *stack_a, t_list *stack_b);
+void					ps_push_b(t_list *stack_a, t_list *stack_b);
+void					ps_push_ss(t_list *stack_a, t_list *stack_b);
+void					ps_rotate_a(t_list *stack_a, t_list **head_a);
+void					ps_rotate_b(t_list *stack_b, t_list **head_b);
+void					ps_rr(t_list *stack_a, t_list *stack_b,
+						t_list **head_a, t_list **head_b);
+void					ps_reverse_rotate_a(t_list *stack_a, t_list **head_a);
+void					ps_reverse_rotate_b(t_list *stack_b, t_list **head_b);
+void					ps_rrr(t_list *stack_a, t_list *stack_b,
+						t_list **head_a, t_list **head_b);
 
 /*
 ** PUSH_SWAP FUNCTIONS
 */
+
+// check if liste triee
+// check if liste triee decroissante
+// check si juste un element ou deux a inverser?
 
 #endif

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_lst.c                                         :+:      :+:    :+:   */
+/*   check_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 12:59:28 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 04:28:42 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/09 05:04:34 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/09 05:12:07 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+int		check_list_sorted(t_list *stack, t_list **head)
 {
-	t_list *head_a;
-	t_list *elements_a;
-	t_list *head_b;
-	int i;
+	t_list *tmp;
 
-	i = 1;
-	head_a = NULL;
-	head_b = NULL;
-	while (i < argc)
+	*head = stack;
+	tmp = stack;
+	while (tmp->next)
 	{
-		elements_a = ps_lstadd(&head_a, ps_atoi(argv[i]));
-		i++;
+		if (tmp->value < tmp->next->value)
+			continue;
+		else
+			return (-1);
+		tmp = tmp->next;
 	}
-	while (head_a)
-	{
-		printf("%d->", head_a->value);
-		head_a = head_a->next;
-	}
-
-
 	return (0);
 }
