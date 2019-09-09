@@ -106,7 +106,27 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-#
+################################################################################
+#============================== REGULAR EXPRESSIONS ==========================##
+################################################################################
+##    . : any characters except new line
+##   \d : digits
+##   \D : not a digits
+##   \w : word character (a-z, A-Z, 0-9, _)
+##   \W : not a word character
+##   \s : whitespace (space, tab, newline)
+##   \S : not a whitespace
+##   \b : word boundary
+##   \B : not a word boundary
+##    ^ : begining of string
+##    $ : end of string
+##   [] : matches characters in brackets
+## [^ ] : matches characters not in brakets
+## 
+## 
+##
+##
+##
 ################################################################################
 ##============================ Cool Shell Commands ===========================##
 ################################################################################

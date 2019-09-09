@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_lst.c                                         :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 12:59:28 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/08 14:25:13 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/08 13:31:52 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/08 14:17:24 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
-#include <stdio.h>
+#include "../../inc/push_swap.h"
 
-int main(int argc, char **argv)
+void	ps_reverse_rotate(t_list *stack, t_list **head)
 {
-	t_list *head_a;
-	t_list *elements_a;
-	t_list *head_b;
-	int i;
+	t_list *tmp;
 
-	i = 1;
-	head_a = NULL;
-	head_b = NULL;
-	while (i < argc)
-	{
-		elements_a = ps_lstadd(&head_a, ps_atoi(argv[i]));
-		i++;
-	}
-	while (head_a)
-	{
-		printf("%d->", head_a->value);
-		head_a = head_a->next;
-	}
+	stack = *head;
+	tmp = stack;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	tmp->next->next = stack;
+	tmp->next = NULL;
+	*head = tmp;
+}
 
-	return (0);
+void	ps_rrr(t_list *stack_a, t_list *stack_b, t_list **head_a,
+		t_list **head_b)
+{
+	ps_reverse_rotate(stack_a, head_a);
+	ps_reverse_rotate(stack_b, head_b);
 }

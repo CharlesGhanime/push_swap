@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_lst.c                                         :+:      :+:    :+:   */
+/*   ps_display.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 12:59:28 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/08 14:25:13 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/06 16:24:03 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/07 07:49:04 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
-#include <stdio.h>
+#include "../../inc/push_swap.h"
 
-int main(int argc, char **argv)
+void	ps_ok()
 {
-	t_list *head_a;
-	t_list *elements_a;
-	t_list *head_b;
-	int i;
+	write(1, "KO\n", 3);
+}
 
-	i = 1;
-	head_a = NULL;
-	head_b = NULL;
-	while (i < argc)
-	{
-		elements_a = ps_lstadd(&head_a, ps_atoi(argv[i]));
-		i++;
-	}
-	while (head_a)
-	{
-		printf("%d->", head_a->value);
-		head_a = head_a->next;
-	}
+void	ps_ko()
+{
+	write(1, "KO\n", 3);
+}
 
-	return (0);
+void	ps_error()
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }
