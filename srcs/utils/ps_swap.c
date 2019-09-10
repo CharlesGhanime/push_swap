@@ -6,13 +6,13 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 14:29:15 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 04:40:27 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/09 09:36:30 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-void	swap(t_list *stack_a)
+void	ps_swap_a(t_list *stack_a)
 {
 	int tmp;
 
@@ -24,7 +24,7 @@ void	swap(t_list *stack_a)
 	write (1, "sa\n", 3);
 }
 
-void	swap_b(t_list *stack_b)
+void	ps_swap_b(t_list *stack_b)
 {
 	int tmp;
 
@@ -38,7 +38,7 @@ void	swap_b(t_list *stack_b)
 
 void	ps_swap_ss(t_list *stack_a, t_list *stack_b)
 {
-	swap(stack_a);
-	swap(stack_b);
-	write (1, "ss\n", 3);
+	ps_swap_a(stack_a);
+	ps_swap_b(stack_b);
+//	write (1, "ss\n", 3);
 }

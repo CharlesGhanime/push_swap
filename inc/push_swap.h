@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:30:38 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 05:19:55 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/09 09:12:15 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct			s_list
 
 int						ps_atoi(char *str);
 int						ps_isdigit(int c);
-t_list					*ps_lstadd(t_list **ptr, int value);
+t_list					*ps_lstadd(t_list **head, int value);
 t_list					*ps_lstnew(void);
 void					ps_putchar(char c);
 void					ps_putnbr(int n);

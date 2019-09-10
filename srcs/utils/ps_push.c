@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 08:22:36 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 04:37:55 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/09 09:36:42 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ void	ps_push_ss(t_list *stack_a, t_list *stack_b)
 {
 	ps_push_a(stack_a, stack_b);
 	ps_push_b(stack_a, stack_b);
-	write (1, "pss\n", 3);
+//	write (1, "pss\n", 3);
 }

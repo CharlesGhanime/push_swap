@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 13:31:52 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 05:14:41 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/09 15:25:30 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ps_reverse_rotate_a(t_list *stack_a, t_list **head_a)
 		return ;
 	while (tmp->next->next)
 		tmp = tmp->next;
+	printf("%d\n", tmp->value);
 	tmp->next->next = stack_a;
 	tmp->next = NULL;
 	*head_a = tmp;
