@@ -6,13 +6,13 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 13:31:52 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 15:25:30 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/12 01:17:20 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../inc/push_swap.h"
 
-void	ps_reverse_rotate_a(t_list *stack_a, t_list **head_a)
+void	ps_rra(t_list *stack_a, t_list **head_a)
 {
 	t_list *tmp;
 
@@ -29,7 +29,7 @@ void	ps_reverse_rotate_a(t_list *stack_a, t_list **head_a)
 	write(1, "rra\n", 4);
 }
 
-void	ps_reverse_rotate_b(t_list *stack_b, t_list **head_b)
+void	ps_rrb(t_list *stack_b, t_list **head_b)
 {
 	t_list *tmp;
 

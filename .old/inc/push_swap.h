@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:30:38 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/11 18:01:52 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/12 01:18:50 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,18 @@ void					ps_ok();
 void					ps_ko();
 void					ps_error();
 void					ps_check_double(t_list *lst, int value);
-void					ps_swap_a(t_list *stack_a);
-void					ps_swap_b(t_list *stack_b);
-void					ps_swap_ss(t_list *stack_a, t_list *stack_b);
-void					ps_push_a(t_list *stack_a, t_list *stack_b);
-void					ps_push_b(t_list *stack_a, t_list *stack_b);
-void					ps_push_ss(t_list *stack_a, t_list *stack_b);
-void					ps_rotate_a(t_list *stack_a, t_list **head_a);
-void					ps_rotate_b(t_list *stack_b, t_list **head_b);
+void					ps_sa(t_list *stack_a);
+void					ps_sb(t_list *stack_b);
+void					ps_sss(t_list *stack_a, t_list *stack_b);
+void					ps_pa(t_list *stack_a, t_list *stack_b);
+void					ps_pb(t_list *stack_a, t_list *stack_b);
+void					ps_ps(t_list *stack_a, t_list *stack_b);
+void					ps_ra(t_list *stack_a, t_list **head_a);
+void					ps_rb(t_list *stack_b, t_list **head_b);
 void					ps_rr(t_list *stack_a, t_list *stack_b,
 						t_list **head_a, t_list **head_b);
-void					ps_reverse_rotate_a(t_list *stack_a, t_list **head_a);
-void					ps_reverse_rotate_b(t_list *stack_b, t_list **head_b);
+void					ps_rra(t_list *stack_a, t_list **head_a);
+void					ps_rrb(t_list *stack_b, t_list **head_b);
 void					ps_rrr(t_list *stack_a, t_list *stack_b,
 						t_list **head_a, t_list **head_b);
 
