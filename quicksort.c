@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   quicksort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 14:09:18 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/05 14:11:44 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/11 19:22:27 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	quicksort(int number[25],int first,int last)
 {
 	int i, j, pivot, temp;
 
-	if(first<last){
+	if(first<last)
+	{
 		pivot=first;
 		i=first;
 		j=last;

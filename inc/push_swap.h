@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:30:38 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/10 18:45:23 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/11 18:01:52 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-/*
+
 typedef struct			s_node
 {
 	int					value;
@@ -30,8 +30,8 @@ typedef struct			s_list
 	struct s_node		*head;
 	struct s_node		*tail;
 }						t_list;
-*/
 
+/*
 typedef struct			s_list
 {
 	int					value;
@@ -46,19 +46,19 @@ typedef struct			s_ab
 	t_list				**tail;
 }						t_ab;
 
-/*typedef struct			s_head
+typedef struct			s_head
 {
 	t_list				*head;
 	t_list				*tail;
-}						t_head;*/
-
+}						t_head;
+*/
 /*
 ** LIBRARY FUNCTIONS
 */
 
 int						ps_atoi(char *str);
 int						ps_isdigit(int c);
-t_list					*ps_lstadd(t_list **head, int value);
+t_list					*ps_lstadd(t_list *lst, int value);
 t_list					*ps_lstnew(void);
 void					ps_putchar(char c);
 void					ps_putnbr(int n);
@@ -69,9 +69,10 @@ int						ps_strlen(char *s);
 /*
 ** UTILS FUNCTIONS
 */
-
+/*
 t_ab					init_stacks(t_ab stack);
 t_ab					*get_stack_head(t_ab stack);
+*/
 void					ps_ok();
 void					ps_ko();
 void					ps_error();
