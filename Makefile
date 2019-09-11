@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/09/10 15:27:28 by cghanime         ###   ########.fr        #
+#    Updated: 2019/09/10 15:33:40 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ INC = -Iinc
 NAME = push_swap
 
 SRCS_PATH = ./src
-UTILS_PATH = ./src/utils
 LIB_PATH = ./lib
 INC_PATH = ./inc
 OBJ_PATH = ./obj

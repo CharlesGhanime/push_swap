@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:30:38 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 09:12:15 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/10 18:45:23 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ typedef struct			s_list
 	struct s_list		*next;
 }						t_list;
 
+typedef struct			s_ab
+{
+	t_list				*a;
+	t_list				*b;
+	t_list				**head;
+	t_list				**tail;
+}						t_ab;
+
 /*typedef struct			s_head
 {
 	t_list				*head;
@@ -62,6 +70,8 @@ int						ps_strlen(char *s);
 ** UTILS FUNCTIONS
 */
 
+t_ab					init_stacks(t_ab stack);
+t_ab					*get_stack_head(t_ab stack);
 void					ps_ok();
 void					ps_ko();
 void					ps_error();
