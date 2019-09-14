@@ -5,44 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 08:22:36 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 09:36:42 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/14 13:50:39 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/14 14:00:12 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../inc/push_swap.h"
 
-void ps_push_a(t_list *stack_a, t_list *stack_b)
+void	ps_push_a(t_list *lst_a, t_list *lst_b)
 {
-	t_list *tmp;
+	t_node *element;
 
-	tmp = stack_b;
-	tmp->value = stack_b->value;
-	free(stack_b);
-	if (tmp == NULL)
-		return ;
-	else
-		tmp->next = stack_a;
-	write (1, "pa\n", 3);
+	if (lst_b->head)
+	{
+		element = lst_b->head;
+		if (lst_a->head == NULL)
+		{
+			lst_b->head = element->next;
+			element->next = NULL;
+			lst_a->head = element;
+			lst_a->tail = element;
+		}
+		else
+		{
+			lst_b->head = element->next;
+			element->next = lst_a->head;
+			lst_a->head = element;
+		}
+		write(1, "pa\n", 3);
+	}
 }
 
-void ps_push_b(t_list *stack_a, t_list *stack_b)
+void	ps_push_b(t_list *lst_a, t_list *lst_b)
 {
-	t_list *tmp;
+	t_node *element;
 
-	tmp = stack_a;
-	tmp->value = stack_a->value;
-	free(stack_a);
-	if (tmp == NULL)
-		return ;
-	else
-		tmp->next = stack_b;
-	write (1, "pb\n", 3);
-}
-
-void	ps_push_ss(t_list *stack_a, t_list *stack_b)
-{
-	ps_push_a(stack_a, stack_b);
-	ps_push_b(stack_a, stack_b);
-//	write (1, "pss\n", 3);
+	if (lst_a->head)
+	{
+		element = lst_b->head;
+		if (lst_a->head == NULL)
+		{
+			lst_a->head = element->next;
+			element->next = NULL;
+			lst_b->head = element;
+			lst_b->tail = element;
+		}
+		else
+		{
+			lst_a->head = element->next;
+			element->next = lst_b->head;
+			lst_b->head = element;
+		}
+		write(1, "pb\n", 3);
+	}
 }

@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/09/10 15:33:40 by cghanime         ###   ########.fr        #
+#    Updated: 2019/09/14 12:39:14 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,17 @@ SRCS_NAME = ps_check_list.c \
 			ps_rotate.c \
 			ps_display.c \
 			ps_reverse_rotate.c \
+
+SRCS_NAME = ps_atoi.c \
+			ps_check_double.c \
+			ps_isdigit.c \
+			ps_lstadd.c \
+			ps_lstnew.c \
+			ps_putchar.c \
+			ps_putstr.c \
+			ps_putnbr.c \
+			ps_strcat.c \
+			ps_strlen.c \
 
 INC_NAME = push_swap.h
 

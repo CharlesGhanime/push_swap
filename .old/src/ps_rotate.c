@@ -5,52 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 14:13:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 12:18:31 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/14 14:00:59 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/14 15:55:47 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../inc/push_swap.h"
 
-void	ps_rotate_a(t_list *stack_a, t_list **head_a)
+void	ps_rotate_a(t_list *lst_a, t_list *lst_b)
 {
-	t_list *tmp;
+	t_node *element;
 
-	stack_a = *head_a;
-	*head_a = (*head_a)->next;
-	tmp = stack_a;
-	if (tmp == NULL)
-		return ;
-	while (tmp->next != NULL)
+	if ((lst_a->head || lst_a->head->next) && lst_a->head != lst_a->tail)
 	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->next;
+		element = lst_a->head;
+		lst_a->head = lst_a->head->next;
+		element->next = NULL;
+		lst_a->tail->next = element;
+		lst_a->tail = element;
+		write(1, "ra\n", 3);
 	}
-	tmp->next = stack_a;
-	stack_a->next = NULL;
-	write (1, "ra\n", 3);
 }
 
-void	ps_rotate_b(t_list *stack_b, t_list **head_b)
+void	ps_rotate_b(t_list *lst_a, t_list *lst_b)
 {
-	t_list *tmp;
+	t_node *element;
 
-	stack_b = *head_b;
-	tmp = stack_b;
-	if (tmp == NULL)
-		return ;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = stack_b;
-	stack_b->next = NULL;
-	*head_b = tmp->next;
-	write (1, "rb\n", 3);
+	if ((lst_b->head || lst_b->head->next) && lst_b->head != lst_b->tail)
+	{
+		element = lst_b->head;
+		lst_b->head = lst_b->head->next;
+		element->next = NULL;
+		lst_b->tail->next = element;
+		lst_b->tail = element;
+		write(1, "rb\n", 3);
+	}
 }
 
-void	ps_rr(t_list *stack_a, t_list *stack_b, t_list **head_a,
-		t_list **head_b)
+void	ps_rotate_a(t_list *lst_a, t_list *lst_b)
 {
-	ps_rotate_a(stack_a, head_a);
-	ps_rotate_b(stack_b, head_b);
-//	write (1, "rr\n", 3);
+	t_node *element;
+
+	if ((lst_a->head || lst_a->head->next) && lst_a->head != lst_a->tail)
+	{
+		element = lst_a->head;
+		lst_a->head = lst_a->head->next;
+		element->next = NULL;
+		lst_a->tail->next = element;
+		lst_a->tail = element;
+		write(1, "ra\n", 3);
+	}
 }

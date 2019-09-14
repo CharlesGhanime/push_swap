@@ -6,11 +6,11 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 16:24:03 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/07 07:49:04 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/14 10:05:15 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 void	ps_ok()
 {

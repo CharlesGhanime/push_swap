@@ -5,40 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 14:29:15 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/09 09:36:30 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/14 13:43:19 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/14 13:50:16 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../inc/push_swap.h"
 
-void	ps_swap_a(t_list *stack_a)
+void	ps_swap_a(t_list *lst_a, t_list *lst_b)
 {
 	int tmp;
 
-	if (!stack_a || !stack_a->next)
+	if(lst_a->head == NULL || lst_a->head->next == NULL)
 		return ;
-	tmp = stack_a->value;
-	stack_a->value = stack_a->next->value;
-	stack_a->next->value = tmp;
+	tmp = lst_a->head->value;
+	lst_a->head->value = lst_a->head->next->value;
+	lst_a->head->next->value = tmp;
 	write (1, "sa\n", 3);
 }
 
-void	ps_swap_b(t_list *stack_b)
+void	ps_swap_b(t_list *lst_b, t_list *lst_a)
 {
 	int tmp;
 
-	if (!stack_b || !stack_b->next)
+	if(lst_b->head == NULL || lst_b->head->next == NULL)
 		return ;
-	tmp = stack_b->value;
-	stack_b->value = stack_b->next->value;
-	stack_b->next->value = tmp;
+	tmp = lst_b->head->value;
+	lst_b->head->value = lst_b->head->next->value;
+	lst_b->head->next->value = tmp;
 	write (1, "sb\n", 3);
 }
 
-void	ps_swap_ss(t_list *stack_a, t_list *stack_b)
+void	ps_swap_ss(t_list *lst_a, t_list *lst_b)
 {
-	ps_swap_a(stack_a);
-	ps_swap_b(stack_b);
-//	write (1, "ss\n", 3);
+	int tmp_a;
+	int tmp_b;
+
+	if(lst_a->head == NULL || lst_a->head->next == NULL
+	|| lst_b->head == NULL || lst_b->head->next == NULL)
+		return ;
+	tmp_a = lst_a->head->value;
+	lst_a->head->value = lst_a->head->next->value;
+	lst_a->head->next->value = tmp_a;
+	tmp_b = lst_b->head->value;
+	lst_b->head->value = lst_b->head->next->value;
+	lst_b->head->next->value = tmp_b;
+	write (1, "ss\n", 3);
 }

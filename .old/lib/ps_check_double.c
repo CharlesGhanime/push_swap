@@ -6,19 +6,19 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 05:07:39 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/06 16:23:28 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/14 12:20:38 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 void	ps_check_double(t_list *lst, int value)
 {
-	t_list	*element;
+	t_node	*element;
 
 	if (lst)
 	{
-		element = lst;
+		element = lst->head;
 		while (element)
 		{
 			if (element->value == value)
