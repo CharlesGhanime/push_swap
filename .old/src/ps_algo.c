@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 13:33:41 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/11 18:19:14 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/14 19:22:15 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ps_which_rotate(t_node *cur, t_node *max)
 	{
 		if (cur == max)
 			find = len;
-		len++
+		len++;
 		cur = cur->next;
 	}
 	if (len / 2 < find)
@@ -31,14 +31,14 @@ int		ps_which_rotate(t_node *cur, t_node *max)
 	return (1);
 }
 
-t_node	*ps_ft_min_val(t_node *cur)
+t_node	*ps_min_value(t_node *cur)
 {
 	t_node *min;
 
 	min = cur;
 	while (cur != NULL)
 	{
-		if (cur->val < min->val)
+		if (cur->value < min->value)
 			min = cur;
 	cur = cur->next;
 	}
@@ -49,7 +49,7 @@ void	ps_main_algo(t_list *a, t_list *b, t_node *cur)
 {
 	t_node *min;
 
-	if (ps_check_list_first(a, a->head, a->head->next, b) == 1)
+	if (ps_check_list_first(a, b, a->head, a->head->next) == 1)
 		return ;
 	while (cur != NULL)
 	{

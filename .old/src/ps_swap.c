@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:43:19 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/14 13:50:16 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/14 17:50:32 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ps_swap_a(t_list *lst_a, t_list *lst_b)
 	write (1, "sa\n", 3);
 }
 
-void	ps_swap_b(t_list *lst_b, t_list *lst_a)
+void	ps_swap_b(t_list *lst_a, t_list *lst_b)
 {
 	int tmp;
 

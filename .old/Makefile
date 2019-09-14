@@ -6,14 +6,14 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/09/14 12:39:14 by cghanime         ###   ########.fr        #
+#    Updated: 2019/09/14 19:34:40 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address,undefined
-INC = -Iinc
+FLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address,undefined
+INCFLAGS = -Iinc
 
 NAME = push_swap
 
@@ -24,16 +24,15 @@ OBJ_PATH = ./obj
 
 SRCS_NAME = ps_check_list.c \
 			ps_algo.c \
-			ps_checker.c \
 			ps_push_swap.c \
-			ps_check_double.c \
 			ps_swap.c \
 			ps_push.c \
 			ps_rotate.c \
 			ps_display.c \
 			ps_reverse_rotate.c \
+#			ps_checker.c \
 
-SRCS_NAME = ps_atoi.c \
+LIB_NAME = 	ps_atoi.c \
 			ps_check_double.c \
 			ps_isdigit.c \
 			ps_lstadd.c \
@@ -48,10 +47,10 @@ INC_NAME = push_swap.h
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
-SRC = $(addprefix $(SRCS_PATH), $(SRC_NAME))
-LIB = $(addprefix $(LIB_PATH), $(LIB_NAME))
-INC = $(addprefix $(INC_PATH), $(INC_NAME))
-OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
+SRC = $(addprefix $(SRCS_PATH)/, $(SRC_NAME))
+LIB = $(addprefix $(LIB_PATH)/, $(LIB_NAME))
+INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
+OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 
 all: $(NAME)
 
@@ -84,3 +83,5 @@ norme:
 	@printf "033\[035mPush_Swap Norminette...033\[0m"
 	@printf "033\[035m+033\0m"
 	@printf "033\[035m[OK]033\0m"
+
+.PHONY: all clean fclean re norme
