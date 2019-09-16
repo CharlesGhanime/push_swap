@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:30:38 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/14 19:22:28 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/15 13:12:24 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ int						ps_strlen(char *s);
 //t_ab					init_stacks(t_ab stack);
 //t_ab					*get_stack_head(t_ab stack);
 
-void					ps_ok();
-void					ps_ko();
-void					ps_error();
+void					ps_ok(void);
+void					ps_ko(void);
+void					ps_error(void);
 void					ps_check_double(t_list *lst, int value);
 
 /*
@@ -117,6 +117,7 @@ void					ps_reverse_rotate_rrr(t_list *lst_a, t_list *lst_b);
 int		ps_which_rotate(t_node *cur, t_node *max);
 t_node	*ps_min_value(t_node *cur);
 void	ps_main_algo(t_list *a, t_list *b, t_node *cur);
+//int		main(int argc, char **argv);
 
 /*
 ** CHECK LIST FUNCTIONS

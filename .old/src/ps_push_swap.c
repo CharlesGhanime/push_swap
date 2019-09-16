@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 15:11:15 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/14 19:35:29 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/15 19:45:24 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,20 @@ void	ps_free(t_list *lst_a, t_list *lst_b)
 
 int		main(int argc, char **argv)
 {
-	t_list *lst_a;
-	t_list *lst_b;
-	long nb;
-	int i;
+	t_list	*lst_a;
+	t_list	*lst_b;
+	long	nb;
+	int		i;
 
 	i = 1;
 	lst_a = ps_lstnew();
 	lst_b = ps_lstnew();
 	if (argc < 1 || lst_a == NULL || lst_b == NULL)
-		ps_error();
+	{
+//		ps_error();
+		write (2, "Error\n", 6);
+		exit(1);
+	}
 	if (argc == 1)
 		return (0);
 	while (argc-- > 1)

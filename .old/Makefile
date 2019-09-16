@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/09/14 19:34:40 by cghanime         ###   ########.fr        #
+#    Updated: 2019/09/15 19:46:56 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,16 +32,16 @@ SRCS_NAME = ps_check_list.c \
 			ps_reverse_rotate.c \
 #			ps_checker.c \
 
-LIB_NAME = 	ps_atoi.c \
-			ps_check_double.c \
+LIB_NAME = ps_atoi.c \
 			ps_isdigit.c \
 			ps_lstadd.c \
 			ps_lstnew.c \
+			ps_strcat.c \
+			ps_strlen.c \
+			ps_check_double.c \
 			ps_putchar.c \
 			ps_putstr.c \
 			ps_putnbr.c \
-			ps_strcat.c \
-			ps_strlen.c \
 
 INC_NAME = push_swap.h
 
@@ -55,10 +55,10 @@ OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $(LIB) $(OBJ) -o $@
-	@printf "033\[032mCompiling Push_Swap...033\0m"
-	@printf "033\[032m+033\0m"
-	@printf "033\[032m[OK]033\0m"
+	@$(CC) $(FLAGS) $(SRC) $(LIB) $(OBJ) -o $@
+#	@printf "033\[032mCompiling Push_Swap...033\0m"
+#	@printf "033\[032m+033\0m"
+#	@printf "033\[032m[OK]033\0m"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
