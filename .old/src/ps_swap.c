@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:43:19 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/14 17:50:32 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/16 16:20:30 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ps_swap_a(t_list *lst_a, t_list *lst_b)
 {
 	int tmp;
 
+	(void)lst_b;
 	if(lst_a->head == NULL || lst_a->head->next == NULL)
 		return ;
 	tmp = lst_a->head->value;
@@ -28,6 +29,7 @@ void	ps_swap_b(t_list *lst_a, t_list *lst_b)
 {
 	int tmp;
 
+	(void)lst_a;
 	if(lst_b->head == NULL || lst_b->head->next == NULL)
 		return ;
 	tmp = lst_b->head->value;
