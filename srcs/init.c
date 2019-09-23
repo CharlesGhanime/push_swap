@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 18:42:08 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/19 17:40:51 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/19 17:42:34 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/20 19:28:11 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		push_a(t_ps *ps)
+t_ps	*init_struct(t_ps *ps)
 {
-	if (a[0] == 0 || len_a == 0)
-		return (-1);
-	a[0] = b[len_b - 1];
-	len_a -= 1;
-	len_b += 1;
+	ps->a = NULL;
+	ps->b = NULL;
+	ps->len_a = 0;
+	ps->len_b = 0;
+	ps->args_nb = 0;
+	ps->mv_nb = 0;
+	ps->pivot = 0;
+	return (ps);
 }
 
-int		push_b(t_ps *ps)
-{
-	if (b[0] == 0 || len_b == 0)
-		return (-1);
-	b[0] = a[len_a - 1];
-	len_b -= 1;
-	len_a += 1;
-}
+
