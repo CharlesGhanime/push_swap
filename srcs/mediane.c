@@ -6,15 +6,13 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/23 20:21:59 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/24 16:09:29 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "push_swap.c"
-#include <stdlib.h>
-#include <stdio.h>
+#include "push_swap.c"
 
-int		*mediane(int *a, int len_a)
+int		*mediane(t_ps *ps)
 {
 	int *med;
 	int *tmp;
@@ -23,10 +21,10 @@ int		*mediane(int *a, int len_a)
 
 	med = (int *)malloc(sizeof(int) * len_a);
 	tmp = (int *)malloc(sizeof(int) * len_a);
-	med = a;
+	med = ps->a;
 	i = 1;
 	j = 0;
-	while (i < len_a + 1)
+	while (i < ps->len_a + 1)
 	{
 		if (med[j] < med[j - 1] && i != 0)
 		{
@@ -39,7 +37,7 @@ int		*mediane(int *a, int len_a)
 	}
 	i = 1;
 	j = 0;
-	while (i <= len_a)
+	while (i <= ps->len_a)
 	{
 		if (med[j] > med[j - 1])
 		{
@@ -47,9 +45,22 @@ int		*mediane(int *a, int len_a)
 			j++;
 		}
 		else
-			mediane(a, len_a);
+			mediane(ps->a, ps->len_a);
 	}
-	return (a);
+	return (ps->a);
+}
+
+int		pivot_pickup(t_ps *ps)
+{
+	int pivot;
+
+	if (len_a % 2 != 0)
+		ps->pivot = a[(ps->len_a / 2)];
+	else
+	{
+		pivot = ((a[(ps->len_a / 2)] + a[ps->len_a / 2 - 1]) / 2);
+	}
+	return (ps->pivot);
 }
 
 int main(int argc, char **argv)
@@ -58,6 +69,7 @@ int main(int argc, char **argv)
 	int i;
 	int j;
 	int len_a;
+	int pivot;
 
 	len_a = argc - 1;
 	a = (int *)malloc(sizeof(int) * len_a);
@@ -78,4 +90,6 @@ int main(int argc, char **argv)
 		printf("-> [%d]\n", a[i]);
 		i++;
 	}
+	pivot = pivot_pickup(a, len_a);
+	printf("pivot = %d\n", pivot);
 }
