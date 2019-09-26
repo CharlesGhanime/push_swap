@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/21 18:18:08 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/25 16:33:20 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/24 22:29:01 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		algo(t_ps *ps)
+int		main(int argc, char **argv)
 {
+	t_ps *ps;
+	int nb;
 	int i;
 
-	i = 0;
-	// check tabs rising or falling
-	if (check_rising(ps) == 1)
+	init_struct(ps);
+	if (argc < 1 || a == NULL || b == NULL)
+	{
+		write (2, "Error\n", 6);
+		exit (1);
+	}
+	if (argc == 1)
 		return (0);
-	if (check_falling == 1)
+	i = 0;
+	while (argc-- > 1)
 	{
-		while (i < len_a)
-		{
-			push_a(ps);
-			i++;
-		}
+		nb = ft_atoi(argv[i++]);
+		check_twins(ps, nb);
+		ps->a[i] = nb;
+		i++;
 	}
-	while (i < len_a)
-	{
-		if (ps->a[i] < pivot)
-			rotate_a(ps);
-		else
-			push_a(ps);
-	}
+	algo(ps);
+	free(ps);
 	return (0);
 }

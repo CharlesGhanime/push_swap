@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:42:08 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/19 17:40:51 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/25 12:00:12 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		push_a(t_ps *ps)
 	a[0] = b[len_b - 1];
 	len_a -= 1;
 	len_b += 1;
+	write(1, "pa\n", 3);
 }
 
 int		push_b(t_ps *ps)
@@ -28,4 +29,5 @@ int		push_b(t_ps *ps)
 	b[0] = a[len_a - 1];
 	len_b -= 1;
 	len_a += 1;
+	write(1, "pb\n", 3);
 }
