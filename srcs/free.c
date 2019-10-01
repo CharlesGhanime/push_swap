@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 17:42:34 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/28 12:19:21 by cghanime         ###   ########.fr       */
+/*   Created: 2019/09/28 12:01:21 by cghanime          #+#    #+#             */
+/*   Updated: 2019/09/28 12:04:11 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_ps	*init_struct(t_ps *ps)
+int		free(t_ps *ps)
 {
-	ps->a = NULL;
-	ps->b = NULL;
+	free(ps->a);
+	free(ps->b);
 	ps->len_a = 0;
 	ps->len_b = 0;
 	ps->args_nb = 0;
 	ps->mv_nb = 0;
 	ps->pivot = 0;
-	return (ps);
+	free(ps);
+	return (0);
 }

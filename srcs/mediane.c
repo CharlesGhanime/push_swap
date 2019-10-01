@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/26 16:56:01 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/28 12:24:08 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		*mediane(int *a, int len_a)
 	j = 0;
 	while (i < len_a + 1)
 	{
-		if (med[j] < med[j - 1] && i != 0)
+		if (med[j] < med[j - 1]/* && i != 0*/)
 		{
 			tmp[0] = med[j];
 			med[j] = med[j - 1];
@@ -86,7 +86,7 @@ int main(int argc, char **argv)
 	printf("%d\n", argc);
 	a = mediane(a, len_a);
 	i = 0;
-	while (i != len_a)
+	while (i < len_a)
 	{
 		printf("a[%d] ", i);
 		printf("-> [%d]\n", a[i]);
