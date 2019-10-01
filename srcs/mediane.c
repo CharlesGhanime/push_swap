@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/28 12:24:08 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/01 17:13:29 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		pivot_pickup(int *a, int len_a)
 	return (pivot);
 }
 
-
+/*
 int main(int argc, char **argv)
 {
 	int *a;
@@ -95,3 +95,4 @@ int main(int argc, char **argv)
 	pivot = pivot_pickup(a, len_a);
 	printf("pivot = %d\n", pivot);
 }
+*/

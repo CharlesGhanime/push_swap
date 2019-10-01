@@ -6,12 +6,36 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/30 20:55:37 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/01 20:06:33 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 //#include <libc.h>
+
+static int*		swapping(int *tab, int len)
+{
+	int i;
+	int j;
+	int *tmp;
+
+	i = len;
+	j = 0;
+	tmp = (int *)malloc(sizeof(int) * len);
+	while (i > 0)
+	{
+		if (tab[j] > tab[j - 1] && i > 0)
+		{
+			printf("if boucle mediane 1\n");
+			tmp[0] = tab[j];
+			tab[j] = tab[j - 1];
+			tab[j - 1] = tmp[0];
+		}
+		i--;
+		j++;
+	}
+	return (tab);
+}
 
 int		*mediane(t_ps *ps)
 {
@@ -21,21 +45,25 @@ int		*mediane(t_ps *ps)
 	int j;
 
 	printf("pre malloc\n");
-	med = (int *)malloc(sizeof(int) * ps->len_a);
 	tmp = (int *)malloc(sizeof(int) * ps->len_a);
 	printf("post malloc\n");
-	med = ps->a;
+//	med = swapping(med, ps->len_a);
+	while (i > 0)
+	{
+		printf("ps->a[%d] = %d\n", i, med[i]);
+		i--;
+	}
 	i = ps->len_a;
 	j = 0;
 	while (i > 0)
 	{
 		printf("boucle mediane 1\n");
-		if (med[j] > med[j - 1] && i > 0)
+		if (ps->a[j] > ps->a[j - 1] && i > 0)
 		{
 			printf("if boucle mediane 1\n");
-			tmp[0] = med[j];
-			med[j] = med[j - 1];
-			med[j - 1] = tmp[0];
+			tmp[0] = ps->a[j];
+			ps->a[j] = ps->a[j - 1];
+			ps->a[j - 1] = tmp[0];
 		}
 		i--;
 		j++;
@@ -45,11 +73,17 @@ int		*mediane(t_ps *ps)
 	while (i > 0)
 	{
 		printf("boucle mediane 2\n");
-		if (med[j] < med[j - 1])
+		printf("boucle mediane 2 i = %d\n", i);
+		if (ps->a[j] < ps->a[j - 1])
 		{
-			printf("if boucle mediane 2\n");
-			i--;
-			j++;
+			if (i == 1 || i == 0)
+				return (ps->a);
+			else
+			{
+				printf("if boucle mediane 2\n");
+				i--;
+				j++;
+			}
 		}
 		else
 			mediane(ps);
@@ -100,7 +134,7 @@ int main(int argc, char **argv)
 		j++;
 	}
 	printf("argc = %d\n", argc);
-//	ps->a = mediane(ps);
+	ps->a = mediane(ps);
 	i = ps->len_a;
 	j = 0;
 	while (i > 0)
@@ -111,8 +145,8 @@ int main(int argc, char **argv)
 		i--;
 		j++;
 	}
-//	ps->pivot = pivot_pickup(ps);
-//	printf("pivot = %d\n", ps->pivot);
+	ps->pivot = pivot_pickup(ps);
+	printf("pivot = %d\n", ps->pivot);
 	free(ps->a);
 	free(ps->b);
 	free (ps);
