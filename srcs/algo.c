@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 18:18:08 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/25 16:33:20 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/02 18:34:48 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,22 @@ int		algo(t_ps *ps)
 		return (0);
 	if (check_falling == 1)
 	{
-		while (i < len_a)
+		while (i < ps->len_a)
 		{
-			push_a(ps);
+			rotate_a(ps);
 			i++;
 		}
 	}
-	while (i < len_a)
+	if (ps->a[0] < ps->a[ps->len_a])
 	{
-		if (ps->a[i] < pivot)
-			rotate_a(ps);
-		else
+		rotate_a(ps);
+	}
+	while (i < ps->len_a)
+	{
+		if (ps->a[i] <= ps->pivot)
 			push_a(ps);
+		else
+			rotate_a(ps);
 	}
 	return (0);
 }
