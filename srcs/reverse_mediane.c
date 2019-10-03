@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/01 20:06:33 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/01 21:23:25 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static int*		swapping(int *tab, int len)
 	int j;
 	int *tmp;
 
+	tmp = (int *)malloc(sizeof(int) * len);
 	i = len;
 	j = 0;
-	tmp = (int *)malloc(sizeof(int) * len);
 	while (i > 0)
 	{
 		if (tab[j] > tab[j - 1] && i > 0)
@@ -45,29 +45,30 @@ int		*mediane(t_ps *ps)
 	int j;
 
 	printf("pre malloc\n");
+	med = (int *)malloc(sizeof(int) * ps->len_a);
 	tmp = (int *)malloc(sizeof(int) * ps->len_a);
 	printf("post malloc\n");
-//	med = swapping(med, ps->len_a);
-	while (i > 0)
-	{
-		printf("ps->a[%d] = %d\n", i, med[i]);
-		i--;
-	}
-	i = ps->len_a;
-	j = 0;
-	while (i > 0)
-	{
-		printf("boucle mediane 1\n");
-		if (ps->a[j] > ps->a[j - 1] && i > 0)
-		{
-			printf("if boucle mediane 1\n");
-			tmp[0] = ps->a[j];
-			ps->a[j] = ps->a[j - 1];
-			ps->a[j - 1] = tmp[0];
-		}
-		i--;
-		j++;
-	}
+	ps->a = swapping(ps->a, ps->len_a);
+//	while (i > 0)
+//	{
+//		printf("ps->a[%d] = %d\n", i, med[i]);
+//		i--;
+//	}
+//	i = ps->len_a;
+//	j = 0;
+//	while (i > 0)
+//	{
+//		printf("boucle mediane 1\n");
+//		if (ps->a[j] > ps->a[j - 1] && i > 0)
+//		{
+//			printf("if boucle mediane 1\n");
+//			tmp[0] = ps->a[j];
+//			ps->a[j] = ps->a[j - 1];
+//			ps->a[j - 1] = tmp[0];
+//		}
+//		i--;
+//		j++;
+//	}
 	i = ps->len_a;
 	j = 0;
 	while (i > 0)
