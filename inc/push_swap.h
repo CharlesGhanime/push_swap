@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/01 17:49:37 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/03 18:44:15 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct	s_ps
 	int			*b;
 	int			len_a;
 	int			len_b;
+	int			push_len;
+	int			recur_size;
 	int			args_nb;
 	int			mv_nb;
 	int			pivot;
