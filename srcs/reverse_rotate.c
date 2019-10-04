@@ -6,13 +6,13 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 18:07:45 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/21 18:16:30 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/04 16:35:52 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		reverse_rotate_a(t_pss *ps)
+int		reverse_rotate_a(t_ps *ps)
 {
 	int *tmp;
 	int i;
