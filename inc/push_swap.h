@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/04 19:05:03 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/07 15:07:16 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,11 @@ int		reverse_rotate_r(t_ps *ps);
 ** Push Swap Functions
 */
 
+int		*master_a_to_b(t_ps *ps, int size);
+int		*master_b_to_a(t_ps *ps, int size);
+int		push_a_to_b(t_ps *ps, int size);
+int		push_b_to_a(t_ps *ps, int size);
 int		*mediane(t_ps *ps);
 int		pivot_pickup(t_ps *ps);
-
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/04 19:04:58 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/07 19:44:58 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int		push_a_to_b(t_ps *ps, int size)
 {
@@ -30,7 +30,7 @@ int		push_a_to_b(t_ps *ps, int size)
 		else
 		{
 			rotate_a(ps);
-			rot_counter++
+			rot_counter++;
 		}
 		i++;
 	}
@@ -38,10 +38,10 @@ int		push_a_to_b(t_ps *ps, int size)
 	if (rot_counter)
 		while (i < rot_counter)
 		{
-			reverse_rotate_a(ps)
+			reverse_rotate_a(ps);
 			i++;
 		}
-	return (push_counter)
+	return (push_counter);
 }
 
 int		push_b_to_a(t_ps *ps, int size)
@@ -58,4 +58,26 @@ int		push_b_to_a(t_ps *ps, int size)
 		push_counter++;
 	}
 	return (push_counter);
+}
+
+int main(int argc, const char **argv)
+{
+	t_ps *ps;
+	int i;
+
+	ps->a = (int *)malloc(sizeof(ps->a) * argc - 1);
+	ps->b = (int *)malloc(sizeof(ps->b) * argc - 1);
+	i = argc;
+	while (i > -1)
+	{
+		ps->a[i] = atoi(argv[i]);
+		i--;
+	}
+	i = 0;
+	while (i < argc - 1)
+	{
+		printf("[%d] -> ", ps->a[i]);
+		i++;
+	}
+	return 0;
 }
