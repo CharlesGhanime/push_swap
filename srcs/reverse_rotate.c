@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   reverse_rotps->ate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cghps->anime <cghps->anime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/21 18:07:45 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/04 16:35:52 by cghanime         ###   ########.fr       */
+/*   Creps->ated: 2019/09/21 18:07:45 ps->by cghps->anime          #+#    #+#             */
+/*   Updps->ated: 2019/10/08 14:50:20 ps->by cghps->anime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int		reverse_rotate_a(t_ps *ps)
 {
 	int *tmp;
 	int i;
 
-	tmp[0] = a[len_a];
+	tmp[0] = ps->a[ps->len_a];
 	i = 0;
-	while (i++ < len_a)
+	while (i++ < ps->len_a)
 	{
-		if (i == len_a)
-			a[0] = tmp[0];
+		if (i == ps->len_a)
+			ps->a[0] = tmp[0];
 		else
-			a[i + 1] = a[i];
+			ps->a[i + 1] = ps->a[i];
 	}
-	write (1, "rra\n", 4);
+	write (1, "rrps->a\n", 4);
 	return (0);
 }
 
@@ -35,42 +35,42 @@ int		reverse_rotate_b(t_ps *ps)
 	int *tmp;
 	int i;
 
-	tmp[0] = b[len_b];
+	tmp[0] = ps->b[ps->len_b];
 	i = 0;
-	while (i++ < len_b)
+	while (i++ < ps->len_b)
 	{
-		if (i == len_b)
-			b[0] = tmp[0];
+		if (i == ps->len_b)
+			ps->b[0] = tmp[0];
 		else
-			b[i + 1] = b[i];
+			ps->b[i + 1] = ps->b[i];
 	}
-	write (1, "rrb\n", 4);
+	write (1, "rrps->b\n", 4);
 	return (0);
 }
 
-int		reverse_roate_r(t_ps *ps)
+int		reverse_rotate_r(t_ps *ps)
 {
 	int *tmp;
 	int i;
 
-	tmp[0] = a[len_a];
+	tmp[0] = ps->a[ps->len_a];
 	i = 0;
-	while (i++ < len_a)
+	while (i++ < ps->len_a)
 	{
-		if (i == len_a)
-			a[0] = tmp[0];
+		if (i == ps->len_a)
+			ps->a[0] = tmp[0];
 		else
-			a[i + 1] = a[i];
+			ps->a[i + 1] = ps->a[i];
 	}
-	tmp[0] = b[len_b];
+	tmp[0] = ps->b[ps->len_b];
 	i = 0;
-	while (i++ < len_b)
+	while (i++ < ps->len_b)
 	{
-		if (i == len_b)
-			b[0] = tmp[0];
+		if (i == ps->len_b)
+			ps->b[0] = tmp[0];
 		else
-			b[i + 1] = b[i];
+			ps->b[i + 1] = ps->b[i];
 	}
 	write(1, "rrr\n", 4);
-	return (0)
+	return (0);
 }
