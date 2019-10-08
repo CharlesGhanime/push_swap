@@ -6,9 +6,11 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/07 19:44:58 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/08 18:24:21 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "../inc/push_swap.h"
 
@@ -65,8 +67,7 @@ int main(int argc, const char **argv)
 	t_ps *ps;
 	int i;
 
-	ps->a = (int *)malloc(sizeof(ps->a) * argc - 1);
-	ps->b = (int *)malloc(sizeof(ps->b) * argc - 1);
+	init_ps(ps, argc - 1);
 	i = argc;
 	while (i > -1)
 	{

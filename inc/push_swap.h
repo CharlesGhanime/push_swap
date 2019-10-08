@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/07 15:07:16 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/08 18:19:42 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ typedef struct	s_ps
 	int			mv_nb;
 	int			pivot;
 }				t_ps;
+
+
+/*
+** Data Structure Management Functions
+*/
+
+int		init_ps(t_ps *ps, int size);
+int		free_ps(t_ps *ps);
 
 /*
 ** Swap Functions
