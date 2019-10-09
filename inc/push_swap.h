@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/08 18:19:42 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 09:05:23 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct	s_ps
 ** Data Structure Management Functions
 */
 
-int		init_ps(t_ps *ps, int size);
+t_ps		*init_ps(t_ps *ps, int len);
 int		free_ps(t_ps *ps);
 
 /*

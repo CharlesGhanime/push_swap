@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/08 18:24:21 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 09:17:53 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,19 @@ int main(int argc, const char **argv)
 {
 	t_ps *ps;
 	int i;
+	int j;
 
-	init_ps(ps, argc - 1);
-	i = argc;
+	ps = init_ps(ps, argc);
+	i = argc - 1;
+	j = 0;
+	printf("COUCOU!\n");
 	while (i > -1)
 	{
-		ps->a[i] = atoi(argv[i]);
+		printf("COUCOU2!\n");
+		ps->a[j] = atoi(argv[i]);
+		printf("ps->a[%d] = %d\n", i, atoi(argv[i]));
 		i--;
+		j++;
 	}
 	i = 0;
 	while (i < argc - 1)
