@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 00:32:27 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/08 14:49:53 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:22:41 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		rotate_a(t_ps *ps)
 	write (1, "ra\n", 3);
 	return (0);
 }
-
 
 int		rotate_b(t_ps *ps)
 {

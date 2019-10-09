@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:42:34 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/08 17:28:04 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 17:09:28 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		free_ps(t_ps *ps)
 	ps->mv_nb = 0;
 	ps->pivot = 0;
 	free(ps);
+	ps = NULL;
 	return (0);
 }

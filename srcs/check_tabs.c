@@ -6,40 +6,44 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 09:54:43 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/04 16:56:55 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:29:35 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
-int		check_rising(int *stack)
+int		check_rising(int *stack, int stack_size)
 {
 	int i;
+	int count;
 
 	i = 0;
-	while (i + 1 < ps->len_a)
+	count = 0;
+	while (i + 1 < stack_size)
 	{
-		if (ps->a[i] > ps->a[i + 1])
+		if (stack[i] > stack[i + 1])
 			count++;
 		i++;
 	}
-	if  (count == ps->len_a)
+	if  (count == stack_size)
 		return (1);
 	return (0);
 }
 
-int		check_falling(int *stack)
+int		check_falling(int *stack, int stack_size)
 {
 	int i;
+	int count;
 
-8	i = 0;
-	while (i + 1 < len_a)
+	i = 0;
+	count = 0;
+	while (i + 1 < stack_size)
 	{
-		if (a[i] < a[i + 1])
+		if (stack[i] < stack[i + 1])
 			count++;
 		i++;
 	}
-	if (count = ps->len_a)
-		return (1)
+	if (count == stack_size)
+		return (1);
 	return (0);
 }

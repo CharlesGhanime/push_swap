@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 09:05:23 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 17:09:26 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct	s_ps
 */
 
 t_ps		*init_ps(t_ps *ps, int len);
-int		free_ps(t_ps *ps);
+int			free_ps(t_ps *ps);
 
 /*
 ** Swap Functions
@@ -74,6 +74,14 @@ int		reverse_rotate_b(t_ps *ps);
 int		reverse_rotate_r(t_ps *ps);
 
 /*
+** Reverse Rotate Functions
+*/
+
+int		check_twins(t_ps *ps, int value);
+int		check_rising(int *stack, int stack_size);
+int		check_falling(int *stack, int stack_size);
+
+/*
 ** Push Swap Functions
 */
 
@@ -81,7 +89,6 @@ int		*master_a_to_b(t_ps *ps, int size);
 int		*master_b_to_a(t_ps *ps, int size);
 int		push_a_to_b(t_ps *ps, int size);
 int		push_b_to_a(t_ps *ps, int size);
-int		*mediane(t_ps *ps);
+int		*compute_mediane(t_ps *ps);
 int		pivot_pickup(t_ps *ps);
-
 #endif

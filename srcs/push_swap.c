@@ -6,11 +6,11 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/07 15:07:12 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 14:38:57 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int		main(int argc, char **argv)
 {

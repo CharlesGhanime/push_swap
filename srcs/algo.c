@@ -6,11 +6,11 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 18:18:08 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/03 18:44:12 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 14:36:36 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int		algo(t_ps *ps)
 {

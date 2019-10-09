@@ -6,24 +6,25 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:37:43 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/24 21:46:59 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:23:15 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int		check_twins(t_ps *ps, int value)
 {
 	int i;
 
 	i = 0;
-	while (i < len_a)
+	while (i < ps->len_a)
 	{
-		if (a[i] == value)
+		if (ps->a[i] == value)
 		{
 			write (1, "Error\n", 6);
 			exit (1);
 		}
 		i++;
 	}
+	return (0);
 }

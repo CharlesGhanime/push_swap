@@ -6,11 +6,11 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 16:54:28 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/07 15:07:14 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/09 14:38:31 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int		*master_a_to_b(t_ps *ps, int size)
 {
