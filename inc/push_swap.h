@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 17:09:26 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/10 20:29:13 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+#define COUCOU printf("coucou\n");
 
 /*
 ** Data Structures
