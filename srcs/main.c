@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 16:52:14 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 17:49:17 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/10 09:19:58 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,7 @@ int main(int argc, char **argv)
 	while (i > 0)
 	{
 		printf("boucle main 2\n");
-		printf("a[%d] ", j);
-		printf("-> [%d]\n", ps->a[j]);
+		printf("a[%d] -> [%d]\n", j, ps->a[j]);
 		i--;
 		j++;
 	}

@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:42:34 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 17:09:28 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/10 09:20:10 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 t_ps	*init_ps(t_ps *ps, int len)
 {
 	ps = (t_ps *)malloc(sizeof(t_ps));
-	ps->a = (int *)malloc(sizeof(int) * len);
-	ps->b = (int *)malloc(sizeof(int) * len);
 	ps->a = NULL;
 	ps->b = NULL;
+	ps->a = (int *)malloc(sizeof(int) * len);
+	ps->b = (int *)malloc(sizeof(int) * len);
 	ps->len_a = 0;
 	ps->len_b = 0;
 	ps->push_len = 0;

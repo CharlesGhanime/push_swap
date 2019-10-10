@@ -6,11 +6,9 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 09:17:53 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/10 09:31:23 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../inc/push_swap.h"
 
@@ -71,8 +69,9 @@ int main(int argc, const char **argv)
 	ps = init_ps(ps, argc);
 	i = argc - 1;
 	j = 0;
+	ps->pivot = 5;
 	printf("COUCOU!\n");
-	while (i > -1)
+	while (i > 0)
 	{
 		printf("COUCOU2!\n");
 		ps->a[j] = atoi(argv[i]);
@@ -86,5 +85,19 @@ int main(int argc, const char **argv)
 		printf("[%d] -> ", ps->a[i]);
 		i++;
 	}
+	ps->push_len = push_a_to_b(ps, 2);
+	i = 0;
+	while (i < ps->len_a)
+	{
+		printf("[%d] -> ", ps->a[i]);
+		i++;
+	}
+	i = 0;
+	while (i < ps->len_b)
+	{
+		printf("[%d] -> ", ps->b[i]);
+		i++;
+	}
 	return 0;
 }
+
