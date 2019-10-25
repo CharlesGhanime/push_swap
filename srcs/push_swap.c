@@ -18,8 +18,8 @@ int		main(int argc, char **argv)
 	int nb;
 	int i;
 
-	init_struct(ps);
-	if (argc < 1 || a == NULL || b == NULL)
+	init_ps(ps, argc);
+	if (argc < 1 || ps->a == NULL || ps->b == NULL)
 	{
 		write (2, "Error\n", 6);
 		exit (1);
@@ -34,7 +34,7 @@ int		main(int argc, char **argv)
 		ps->a[i] = nb;
 		i++;
 	}
-	algo(ps);
-	free(ps);
+	master_a_to_b(ps, ps->len_a);
+	free_ps(ps);
 	return (0);
 }

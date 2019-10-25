@@ -18,9 +18,9 @@ int		algo(t_ps *ps)
 
 	i = 0;
 	// check tabs rising or falling
-	if (check_rising(ps) == 1)
+	if (check_rising(ps->a, ps->len_a) == 1)
 		return (0);
-	if (check_falling == 1)
+	if (check_falling(ps->a, ps->len_a) == 1)
 	{
 		while (i < ps->len_a)
 		{

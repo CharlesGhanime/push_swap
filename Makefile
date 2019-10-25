@@ -12,35 +12,31 @@
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address,undefined
-CPP_FLAGS = -Iinc
+FLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address,undefined
+INC_FLAGS = -Iinc
 
 NAME = push_swap
 
-SRCS_PATH = ./src
-LIB_PATH = ./lib
+LIB = ./libft/libft.a
+LIB_H = ./libft/libft.h
+
+SRCS_PATH = ./srcs
+LIB_PATH = ./libft
 INC_PATH = ./inc
 OBJ_PATH = ./obj
 
-SRCS_NAME = ps_check_list.c	\
-			ps_algo.c \
-			ps_push_swap.c \
-			ps_swap.c \
-			ps_push.c \
-			ps_rotate.c \
-			ps_display.c \
-			ps_reverse_rotate.c \
-			ps_atoi.c \
-			ps_isdigit.c \
-			ps_lstadd.c \
-			ps_lstnew.c \
-			ps_strcat.c \
-			ps_strlen.c \
-			ps_check_double.c \
-			ps_putchar.c \
-			ps_putstr.c \
-			ps_putnbr.c \
-			#ps_checker.c \
+SRCS_NAME =	algo.c \
+		check_tabs.c \
+		check_twins.c \
+		compute_mediane.c \
+		init.c \
+		master.c \
+		push.c \
+		push_swap.c \
+		push_to.c \
+		reverse_rotate.c \
+		rotate.c \
+		swap.c \	
 
 INC_NAME = push_swap.h
 
@@ -50,41 +46,56 @@ SRC = $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
 INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 
+############
+# <colors> #
+############
+
+YELLOW = \033[033m
+GREEN = \033[032m
+BLUE = \033[36m
+RED = \033[031m
+PURPLE = \033[35m
+RESET = \033[0m
+
+#############
+# </colors> #
+#############
+
 all: $(NAME)
 
-$(NAME): $(OBJ_PATH) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
-#	printf "033\[032mCompiling Push_Swap...033\0m"
-#	printf "033\[032m+033\0m"
-#	printf "033\[032m[OK]033\0m"
+$(NAME): $(LIB) $(OBJ)
+	$(CC) $(FLAGS) $(LIB) $(OBJ) $(LIB_H) -o $@
+	@printf "$(GREEN)Compiling Push_Swap...$(RESET)"
+	@printf "$(GREEN)+$(RESET)"
+	@printf "$(GREEN)[OK]$(RESET)"
 
-$(OBJ_PATH):
-	mkdir $@
+$(LIB):
+	$(MAKE) -C $(LIB_PATH)
 
-$(OBJ): $(OBJ_PATH)%.o: $(SRCS_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_PATH)/%.o: $(SRCS_PATH)/%.c
+	mkdir $(OBJ_PATH) 2> /dev/null || true
+	$(CC) -o $@ -c $<
+
+clean_lib: 
 
 clean:
-	rm -rf $(OBJ_PATH)
-	printf "033\[033mPush_Swap Cleaning Objects...033\[0m"
-	printf "033\[033m+033\0m"
-	printf "033\[033m[OK]033\0m"
+	rm -rf $(OBJ)
+	@printf "033\[033mPush_Swap Cleaning Objects...033\[0m"
+	@printf "033\[033m+033\0m"
+	@printf "033\[033m[OK]033\0m"
 
 fclean: clean
 	rm -rf ./obj $(NAME)
-	printf "033\[034mPush_Swap Cleaning Lib...033\[0m"
-	printf "033\[034m+033\0m"
-	printf "033\[034m[OK]033\0m"
+	@printf "033\[034mPush_Swap Cleaning Lib...033\[0m"
+	@printf "033\[034m+033\0m"
+	@printf "033\[034m[OK]033\0m"
 
 re: fclean all
 
 norme:
-	norminette $(SRC) $(LIB) $(INC)
-	printf "033\[035mPush_Swap Norminette...033\[0m"
-	printf "033\[035m+033\0m"
-	printf "033\[035m[OK]033\0m"
+	@norminette $(SRC) $(LIB) $(INC)
+	@printf "033\[035mPush_Swap Norminette...033\[0m"
+	@printf "033\[035m+033\0m"
+	@printf "033\[035m[OK]033\0m"
 
 .PHONY: all clean fclean re norme
-#.SILENT:
-#			ps_checker.c \
-#			ps_checker.c \
