@@ -17,6 +17,7 @@ int		reverse_rotate_a(t_ps *ps)
 	int *tmp;
 	int i;
 
+	tmp = NULL;
 	tmp[0] = ps->a[ps->len_a];
 	i = 0;
 	while (i++ < ps->len_a)
@@ -35,6 +36,7 @@ int		reverse_rotate_b(t_ps *ps)
 	int *tmp;
 	int i;
 
+	tmp = NULL;
 	tmp[0] = ps->b[ps->len_b];
 	i = 0;
 	while (i++ < ps->len_b)
@@ -53,6 +55,7 @@ int		reverse_rotate_r(t_ps *ps)
 	int *tmp;
 	int i;
 
+	tmp = NULL;
 	tmp[0] = ps->a[ps->len_a];
 	i = 0;
 	while (i++ < ps->len_a)

@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/10 19:59:29 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/25 19:42:56 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int		push_a_to_b(t_ps *ps, int size)
 	printf ("ca rentre dans la fonction");
 	i = 0;
 	push_counter = 0;
-	while (i < ps->len_a)
+	rot_counter = 0;
+	while (i < size)
 	{
 		if (ps->a[i] <= ps->pivot)
 		{
@@ -54,7 +55,7 @@ int		push_b_to_a(t_ps *ps, int size)
 
 	i = 0;
 	push_counter= 0;
-	while (i < ps->push_len)
+	while (i < size)
 	{
 		push_b(ps);
 		i++;
@@ -63,12 +64,14 @@ int		push_b_to_a(t_ps *ps, int size)
 	return (push_counter);
 }
 
+/*
 int main(int argc, const char **argv)
 {
 	t_ps *ps;
 	int i;
 	int j;
 
+	ps = NULL;
 	ps = init_ps(ps, argc);
 	printf(" ps->push_len = %d\n", ps->push_len);
 	i = argc - 1;
@@ -106,4 +109,4 @@ int main(int argc, const char **argv)
 	}
 	return 0;
 }
-
+*/
