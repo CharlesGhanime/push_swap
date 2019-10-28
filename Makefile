@@ -23,8 +23,7 @@ LIB_PATH = ./libft
 INC_PATH = ./inc
 OBJ_PATH = ./obj
 
-SRCS_NAME =	algo.c \
-		check_tabs.c \
+SRCS_NAME =	check_tabs.c \
 		check_twins.c \
 		compute_mediane.c \
 		init.c \

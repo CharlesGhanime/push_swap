@@ -20,19 +20,23 @@ int		main(int argc, char **argv)
 
 	ps = NULL;
 	ps = init_ps(ps, argc);
-	if (argc < 1 || ps->a == NULL || ps->b == NULL)
+	printf("Hello coucou\n");
+/*	if (argc < 2 || ps->a == NULL || ps->b == NULL)
 	{
 		write (2, "Error\n", 6);
 		exit (1);
 	}
 	if (argc == 1)
-		return (0);
+		return (0);*/
 	i = 0;
-	while (argc-- > 1)
+	while (argc > 1)
 	{
-		nb = ft_atoi(argv[i++]);
+		//printf("argc = %d\n", argc);
+		nb = ft_atoi(argv[i + 1]);
 		check_twins(ps, nb);
 		ps->a[i] = nb;
+		printf("ps->a = %d\n", ps->a[i]);
+		argc--;
 		i++;
 	}
 	master_a_to_b(ps, ps->len_a);
