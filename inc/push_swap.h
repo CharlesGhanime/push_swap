@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/10 20:29:13 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/28 13:43:06 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct	s_ps
 {
 	int			*a;
 	int			*b;
+	int			*mediane;
 	int			len_a;
 	int			len_b;
 	int			push_len;

@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 17:09:24 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/28 21:30:33 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,17 @@ int		*compute_mediane(t_ps *ps)
 
 int		pivot_pickup(t_ps *ps)
 {
+	printf("ps->len_a = %d\n", ps->len_a);
+	printf("ps->mediane[0] = %d\n", ps->mediane[0]);
+	printf("ps->mediane[1] = %d\n", ps->mediane[1]);
+	printf("ps->mediane[2] = %d\n", ps->mediane[2]);
+	printf("ps->mediane[3] = %d\n", ps->mediane[3]);
+//	printf("ps->mediane[4] = %d\n", ps->mediane[4]);
 	if (ps->len_a % 2 != 0)
-		ps->pivot = ps->a[(ps->len_a / 2)];
+		ps->pivot = ps->mediane[(ps->len_a / 2)];
 	else
 	{
-		ps->pivot = ((ps->a[(ps->len_a / 2)] + ps->a[ps->len_a / 2 - 1]) / 2);
+		ps->pivot = ((ps->mediane[(ps->len_a / 2)] + (ps->mediane[(ps->len_a - 1) / 2]) / 2));
 	}
 	return (ps->pivot);
 }
