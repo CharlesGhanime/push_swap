@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/10/25 19:37:09 by cghanime         ###   ########.fr        #
+#    Updated: 2019/10/28 12:10:28 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,29 +18,29 @@ INC_FLAGS = -Iinc
 LIB = ./libft/libft.a
 LIB_H = ./libft/libft.h
 
-SRCS_PATH = ./srcs
+SRC_PATH = ./srcs
 LIB_PATH = ./libft
 INC_PATH = ./inc
 OBJ_PATH = ./obj
 
-SRCS_NAME =	check_tabs.c \
-		check_twins.c \
-		compute_mediane.c \
-		init.c \
-		master.c \
-		push.c \
-		push_swap.c \
-		push_to.c \
-		reverse_rotate.c \
-		rotate.c \
-		swap.c \
+SRC_NAME =	check_tabs.c \
+			check_twins.c \
+			compute_mediane.c \
+			init.c \
+			master.c \
+			push.c \
+			push_swap.c \
+			push_to.c \
+			reverse_rotate.c \
+			rotate.c \
+			swap.c \
 
 INC_NAME = push_swap.h
 
 OBJ_NAME = $(SRCS_NAME:.c=.o)
 OBJ_LIB_NAME = $(SRCS_LIB_NAME:.c=.o)
 
-SRC = $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
+SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 

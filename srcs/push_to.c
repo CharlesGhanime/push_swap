@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/25 19:42:56 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/28 18:20:54 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,23 @@ int		push_a_to_b(t_ps *ps, int size)
 	int push_counter;
 	int rot_counter;
 
-	printf ("ca rentre dans la fonction");
+	printf ("ca rentre dans la fonction\n");
 	i = 0;
 	push_counter = 0;
 	rot_counter = 0;
+	printf ("ps->pivot = %d\n", ps->pivot);
+	printf("size = %d\n", size);
 	while (i < size)
 	{
 		if (ps->a[i] <= ps->pivot)
 		{
-			printf ("ca rentre");
+			printf ("ca rentre push");
 			push_a(ps);
 			push_counter++;
 		}
 		else
 		{
+			printf ("ca rentre rotate");
 			rotate_a(ps);
 			rot_counter++;
 		}
@@ -65,48 +68,48 @@ int		push_b_to_a(t_ps *ps, int size)
 }
 
 /*
-int main(int argc, const char **argv)
-{
-	t_ps *ps;
-	int i;
-	int j;
+   int main(int argc, const char **argv)
+   {
+   t_ps *ps;
+   int i;
+   int j;
 
-	ps = NULL;
-	ps = init_ps(ps, argc);
-	printf(" ps->push_len = %d\n", ps->push_len);
-	i = argc - 1;
-	j = 0;
-	ps->len_a = argc;
-	ps->pivot = 3;
-	printf("COUCOU!\n");
-	while (i > 0)
-	{
-		printf("COUCOU2!\n");
-		ps->a[j] = atoi(argv[i]);
-		printf("ps->a[%d] = %d\n", i, atoi(argv[i]));
-		i--;
-		j++;
-	}
-	i = 0;
-	while (i < argc - 1)
-	{
-		printf("[%d] -> ", ps->a[i]);
-		i++;
-	}
-	ps->push_len = push_a_to_b(ps, 2);
-	printf(" ps->push_len = %d\n", ps->push_len);
-	i = 0;
-	while (i < ps->len_a)
-	{
-		printf("[%d] -> ", ps->a[i]);
-		i++;
-	}
-	i = 0;
-	while (i < ps->len_b)
-	{
-		printf("[%d] -> ", ps->b[i]);
-		i++;
-	}
-	return 0;
-}
-*/
+   ps = NULL;
+   ps = init_ps(ps, argc);
+   printf(" ps->push_len = %d\n", ps->push_len);
+   i = argc - 1;
+   j = 0;
+   ps->len_a = argc;
+   ps->pivot = 3;
+   printf("COUCOU!\n");
+   while (i > 0)
+   {
+   printf("COUCOU2!\n");
+   ps->a[j] = atoi(argv[i]);
+   printf("ps->a[%d] = %d\n", i, atoi(argv[i]));
+   i--;
+   j++;
+   }
+   i = 0;
+   while (i < argc - 1)
+   {
+   printf("[%d] -> ", ps->a[i]);
+   i++;
+   }
+   ps->push_len = push_a_to_b(ps, 2);
+   printf(" ps->push_len = %d\n", ps->push_len);
+   i = 0;
+   while (i < ps->len_a)
+   {
+   printf("[%d] -> ", ps->a[i]);
+   i++;
+   }
+   i = 0;
+   while (i < ps->len_b)
+   {
+   printf("[%d] -> ", ps->b[i]);
+   i++;
+   }
+   return 0;
+   }
+   */
