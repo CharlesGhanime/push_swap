@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/28 21:11:25 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/29 22:38:55 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		main(int argc, char **argv)
 	i = 0;
 	while (argc > 1)
 	{
-		//printf("argc = %d\n", argc);
+//		printf("argc = %d\n", argc);
 		nb = ft_atoi(argv[i + 1]);
 		check_twins(ps, nb);
 		ps->a[i] = nb;
@@ -41,16 +41,17 @@ int		main(int argc, char **argv)
 		i++;
 	}
 //	printf("ps->len_a = %d\n", ps->len_a);
-	ps->mediane = compute_mediane(ps);
+//	ps->mediane = compute_mediane(ps);
 	int k = 0;
 	while (k < ps->len_a)
 	{
-//		printf("ps->mediane[%d] = %d\n", k, ps->mediane[k]);
+		printf("ps->a[%d] = %d\n", k, ps->a[k]);
 		k++;
 	}
-	ps->pivot = pivot_pickup(ps);
-	printf("ps->pivot = %d\n", ps->pivot);
-//	master_a_to_b(ps, ps->len_a);
+//	ps->pivot = pivot_pickup(ps);
+//	printf("ps->pivot = %d\n", ps->pivot);
+	printf("ps->len_a = %d\n", ps->len_a);
+	master_a_to_b(ps, ps->len_a);
 	free_ps(ps);
 	return (0);
 }
