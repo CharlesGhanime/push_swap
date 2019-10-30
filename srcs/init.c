@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:42:34 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/28 13:46:16 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/30 18:23:30 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ t_ps	*init_ps(t_ps *ps, int len)
 	ps->a = NULL;
 	ps->b = NULL;
 	ps->mediane = NULL;
-	ps->a = (int *)ft_ptrnew(len);
-	ps->b = (int *)ft_ptrnew(len);
+	ps->a = (int *)malloc(sizeof(int) * len);
+	ps->b = (int *)malloc(sizeof(int) * len);
+	ps->a = init_tab(ps->a, len);
+	ps->b = init_tab(ps->b, len);
 	ps->len_a = 0;
 	ps->len_b = 0;
 	ps->push_len = 0;
@@ -28,6 +30,19 @@ t_ps	*init_ps(t_ps *ps, int len)
 	ps->mv_nb = 0;
 	ps->pivot = 0;
 	return (ps);
+}
+
+int		*init_tab(int *tab, int size)
+{
+	int i;
+
+	i = 0;
+	while (i < size)
+	{
+		tab[i] = 0;
+		i++;
+	}
+	return (tab);
 }
 
 int		free_ps(t_ps *ps)
