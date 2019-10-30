@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/10/28 12:10:28 by cghanime         ###   ########.fr        #
+#    Updated: 2019/10/29 16:27:28 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ BOLD = \e[1m
 
 all: $(NAME)
 
-$(NAME): $(LIB) $(OBJ)
+$(NAME): $(LIB) $(OBJ) $(SRC)
 	@$(CC) $(FLAGS) $(LIB) $(SRC) -o $@
 	@printf "$(GREEN)[Compiling Push_Swap...]$(RESET)		"
 	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
