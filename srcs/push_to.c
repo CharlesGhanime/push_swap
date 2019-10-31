@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/29 22:39:05 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/30 20:23:06 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,20 @@ int		push_a_to_b(t_ps *ps, int size)
 	int push_counter;
 	int rot_counter;
 
-	printf ("ca rentre dans la fonction\n");
 	i = 0;
 	push_counter = 0;
 	rot_counter = 0;
-	printf("size = %d\n", size);
-	int t = 0;
-	while (t < ps->len_a)
-	{
-		printf("ps->a[%d] = %d\n", t, ps->a[t]);
-		t++;
-	}
+	printf("push a to b\n");
+	print_stack(ps->a, ps->len_a);
 	while (i < size)
 	{
-		printf ("ps->pivot push_to = %d\n", ps->pivot);
-		printf ("ps->a[%d] = %d push_to\n", i, ps->a[i]);
 		if (ps->a[i] <= ps->pivot)
 		{
-			printf ("ca rentre push\n");
 			push_b(ps);
 			push_counter++;
 		}
 		else
 		{
-			printf ("ca rentre rotate");
 			rotate_a(ps);
 			rot_counter++;
 		}
@@ -57,25 +47,20 @@ int		push_a_to_b(t_ps *ps, int size)
 	int r = 0;
 	while (r < ps->len_b)
 	{
-		printf("ps->b[%d] = %d\n", r, ps->b[r]);
 		r++;
 	}
-	printf ("push_counter = %d\n", push_counter);
 	return (push_counter);
 }
 
 int		push_b_to_a(t_ps *ps, int size)
 {
-//	printf ("coucou de master b\n");
 	int i;
 	int push_counter;
 
 	i = 0;
 	push_counter= 0;
-//	printf("size dans master b = %d\n", size);
 	while (i < size)
 	{
-//		printf ("pourquoi tu segfault?\n");
 		push_a(ps);
 		i++;
 		push_counter++;

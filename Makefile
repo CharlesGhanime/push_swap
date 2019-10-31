@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/10/29 16:27:28 by cghanime         ###   ########.fr        #
+#    Updated: 2019/10/30 16:18:17 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC_PATH = ./srcs
 LIB_PATH = ./libft
 INC_PATH = ./inc
 OBJ_PATH = ./obj
+DBUG_PATH = ./.debug
 
 SRC_NAME =	check_tabs.c \
 			check_twins.c \
@@ -35,6 +36,8 @@ SRC_NAME =	check_tabs.c \
 			rotate.c \
 			swap.c \
 
+DBUG_NAME = print_stack.c \
+
 INC_NAME = push_swap.h
 
 OBJ_NAME = $(SRCS_NAME:.c=.o)
@@ -43,6 +46,7 @@ OBJ_LIB_NAME = $(SRCS_LIB_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
+DBUG = $(addprefix $(DBUG_PATH)/, $(DBUG_NAME))
 
 ############
 # <Colors> #
@@ -63,15 +67,15 @@ BOLD = \e[1m
 
 all: $(NAME)
 
-$(NAME): $(LIB) $(OBJ) $(SRC)
-	@$(CC) $(FLAGS) $(LIB) $(SRC) -o $@
+$(NAME): $(LIB) $(OBJ) $(SRC) $(DBUG)
+	@$(CC) $(FLAGS) $(LIB) $(SRC) $(DBUG) -o $@
 	@printf "$(GREEN)[Compiling Push_Swap...]$(RESET)		"
 	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
 
 $(LIB):
 	@$(MAKE) -C $(LIB_PATH)
 
-$(OBJ_PATH)/%.o: $(SRCS_PATH)/%.c
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(DBUG_PATH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) -o $@ -c $<
 

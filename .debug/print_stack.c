@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 20:23:09 by cghanime         ###   ########.fr       */
+/*   Created: 2019/10/30 14:58:13 by cghanime          #+#    #+#             */
+/*   Updated: 2019/10/30 16:34:54 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include <libc.h>
 
-int		main(int argc, char **argv)
+int		print_stack(int *stack, size_t len)
 {
-	t_ps *ps;
-	int nb;
-	int i;
+	size_t i;
 
-	ps = NULL;
-	ps = init_ps(ps, argc - 1);
-	ps->len_a = argc - 1;
-	if (argc < 2 || ps->a == NULL || ps->b == NULL)
-	{
-		write (2, "Error\n", 6);
-		exit (1);
-	}
-	if (argc == 1)
-		return (0);
 	i = 0;
-	while (argc > 1)
+	while (i < len)
 	{
-		nb = ft_atoi(argv[i + 1]);
-		check_twins(ps, nb);
-		ps->a[i] = nb;
-		argc--;
+		printf("stack[%ld] = %d\n", i, stack[i]);
 		i++;
 	}
-	master_a_to_b(ps, ps->len_a);
-	free_ps(ps);
 	return (0);
 }
+/*
+int main(void)
+{
+	int b[]={1, 2, 3, 4, 5};
+
+	print_stack(b, 5);
+	return(0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/28 13:43:06 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/30 16:35:08 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct	s_ps
 */
 
 t_ps		*init_ps(t_ps *ps, int len);
+int			*init_tab(int *tab, int size);
 int			free_ps(t_ps *ps);
 
 /*
@@ -95,4 +96,11 @@ int		push_a_to_b(t_ps *ps, int size);
 int		push_b_to_a(t_ps *ps, int size);
 int		*compute_mediane(t_ps *ps);
 int		pivot_pickup(t_ps *ps);
+
+/*
+** Debugging Functions
+*/
+
+int		print_stack(int * stack, size_t len);
+
 #endif
