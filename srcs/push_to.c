@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 20:23:06 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/31 19:44:40 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		push_a_to_b(t_ps *ps, int size)
 	push_counter = 0;
 	rot_counter = 0;
 	printf("push a to b\n");
-	print_stack(ps->a, ps->len_a);
+	ptfa;
 	while (i < size)
 	{
 		if (ps->a[i] <= ps->pivot)
@@ -67,7 +67,6 @@ int		push_b_to_a(t_ps *ps, int size)
 	}
 	return (push_counter);
 }
-
 /*
    int main(int argc, const char **argv)
    {

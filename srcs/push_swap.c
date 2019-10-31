@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 20:23:09 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/31 20:27:25 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(int argc, char **argv)
 
 	ps = NULL;
 	ps = init_ps(ps, argc - 1);
-	ps->len_a = argc - 1;
+	ps->len_a = argc;
 	if (argc < 2 || ps->a == NULL || ps->b == NULL)
 	{
 		write (2, "Error\n", 6);
