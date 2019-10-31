@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:42:34 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 18:23:30 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/31 20:27:22 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_ps	*init_ps(t_ps *ps, int len)
 	ps->b = (int *)malloc(sizeof(int) * len);
 	ps->a = init_tab(ps->a, len);
 	ps->b = init_tab(ps->b, len);
-	ps->len_a = 0;
+	ps->len_a = len;
 	ps->len_b = 0;
 	ps->push_len = 0;
 	ps->recur_size = 0;

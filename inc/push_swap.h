@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 16:35:08 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/31 20:27:29 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,13 @@
 #include <unistd.h>
 #include "../libft/libft.h"
 
-#define COUCOU printf("coucou\n");
+#define ptf printf;
+#define cc "printf";
+#define ptfa print_stack("ps->a", ps->a, ps->len_a);
+#define ptfb print_stack("ps->b", ps->b, ps->len_b);
+#define ptfla printf("len_a = %d\n", ps->len_a);
+#define ptflb printf("len_b = %d\n", ps->len_b);
+#define filltab int i=0; while (argc > 1) { ps->a[i] = ft_atoi(argv[i + 1]); argc--; i++;}
 
 /*
 ** Data Structures
@@ -101,6 +107,6 @@ int		pivot_pickup(t_ps *ps);
 ** Debugging Functions
 */
 
-int		print_stack(int * stack, size_t len);
+int		print_stack(char *name, int * stack, size_t len);
 
 #endif
