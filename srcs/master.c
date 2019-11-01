@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 16:54:28 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 20:23:14 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/01 21:59:09 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int		*master_a_to_b(t_ps *ps, int size)
 **	if (check_rising(ps->a, ps->len_a) == 1)
 ** return (ps->a);
 */
-	print_stack(ps->a, ps->len_a);
+	ptfa;
 	ps->mediane = compute_mediane(ps);
-	print_stack(ps->a, ps->len_a);
+	ptfa;
 	ps->pivot = pivot_pickup(ps);
-	print_stack(ps->a, ps->len_a);
+	ptfa;
 	recur_size_a = push_a_to_b(ps, size);
 	if (size > 0)
 	{

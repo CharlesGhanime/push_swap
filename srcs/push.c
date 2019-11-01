@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:42:08 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/31 20:27:20 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/01 21:59:06 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,19 @@ int		push_a(t_ps *ps)
 
 int		push_b(t_ps *ps)
 {
+	ptfa;
 	if (ps->len_a == 0)
 		return (-1);
-	ps->b[ps->len_b - 1] = ps->a[ps->len_a - 1];
+	ps->b[ps->len_b] = ps->a[ps->len_a - 1];
 	ps->len_b += 1;
 	ps->len_a -= 1;
 	write(1, "pb\n", 3);
 	return (0);
 }
-
+/*
 int main(int argc, char **argv)
 {
-	t_ps *ps;
+	t_ps *ps = NULL;
 
 	ps = init_ps(ps, argc - 1);
 
@@ -56,3 +57,4 @@ int main(int argc, char **argv)
 	ptfb;
 	return (0);
 }
+*/
