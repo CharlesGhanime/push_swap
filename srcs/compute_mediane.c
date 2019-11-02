@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 20:23:11 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/01 16:24:23 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		*compute_mediane(t_ps *ps)
 	j = 0;
 	printf("compute_mediane\n");
 	printf("compute_mediane ps->len_a = %d\n", ps->len_a);
-	print_stack(ps->a, ps->len_a);
+	ptfa;
 	while (i > 0)
 	{
 		if (ps->a[j] < ps->a[j - 1])
