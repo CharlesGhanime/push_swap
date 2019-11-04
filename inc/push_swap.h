@@ -16,8 +16,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
 #include "../libft/libft.h"
 
+#define end UINT_MAX 
 #define ptf printf;
 #define cc "printf";
 #define ptfa print_stack("ps->a", ps->a, ps->len_a);

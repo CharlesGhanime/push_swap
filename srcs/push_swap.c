@@ -18,6 +18,7 @@ int		main(int argc, char **argv)
 	int nb;
 	int i;
 
+	printf("uintmax = %u", end);
 	ps = NULL;
 	ps = init_ps(ps, argc - 1);
 	ps->len_a = argc;
@@ -37,7 +38,7 @@ int		main(int argc, char **argv)
 		argc--;
 		i++;
 	}
-	master_a_to_b(ps, ps->len_a);
+//	master_a_to_b(ps, ps->len_a);
 	free_ps(ps);
 	return (0);
 }
