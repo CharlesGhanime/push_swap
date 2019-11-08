@@ -6,39 +6,34 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/04 19:12:40 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 02:46:40 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+int		arg_size(char **arg)
+{
+	int		i;
+
+	i = 0;
+	while (arg && arg[i])
+		i++;
+	return (i);
+}
+
 int		main(int argc, char **argv)
 {
-	t_ps *ps;
-	int nb;
-	int i;
+	t_ps	ps;
+	char	**arg;
 
-	printf("uintmax = %u", end);
-	ps = NULL;
-	ps = init_ps(ps, argc - 1);
-	ps->len_a = argc;
-	if (argc < 2 || ps->a == NULL || ps->b == NULL)
-	{
-		write (2, "Error\n", 6);
-		exit (1);
-	}
+//	arg = NULL;
+//	arg = init_tab(arg);
 	if (argc == 1)
 		return (0);
-	i = 0;
-	while (argc > 1)
-	{
-		nb = ft_atoi(argv[i + 1]);
-		check_twins(ps, nb);
-		ps->a[i] = nb;
-		argc--;
-		i++;
-	}
-//	master_a_to_b(ps, ps->len_a);
-	free_ps(ps);
+	arg = get_arg(argv + 1);
+	init_ps(&ps, arg_size(arg));
+	master_a_to_b(&ps, ps.len_a);
+	free_ps(&ps);
 	return (0);
 }

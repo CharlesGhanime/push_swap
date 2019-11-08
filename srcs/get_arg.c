@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_parsing.c                                      :+:      :+:    :+:   */
+/*   get_arg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:56:32 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/06 17:59:23 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 02:45:38 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-char	**arg_parsing(char **av)
+char	**get_arg(char **av)
 {
-	int i;
-	char **input;
-	char **output;
+	char	**arg;
+	char	**tab;
+	char	*s;
+	int		counter;
 
-	i = 0;
-	input = NULL;
-	output = NULL;
-	while (av[i])
+	s = NULL;
+	counter = 0;
+	while (av[counter])
 	{ 
-		input = ft_strsplit(av[i], ' ');
-		i++;
+		tab = ft_strsplit(av[counter], ' ');
+		ft_join_tab(tab, &s);
+		ft_free_tab(tab);
+		counter++;
 	}
-	printf("input = %s\n", input);
-//	output = ft_strsplit(input, ' ');
-//	printf("output = %s\n", output);
-//	return (output);
-	return (NULL);
-}
-
-int		main(int argc, char **argv)
-{
-	char **output;
-
-	output = NULL;
-	output = arg_parsing(argv, argc);
-	return (0);
+	arg = ft_strsplit(s, '\n');
+	ft_strdel(&s);
+	return (arg);
 }

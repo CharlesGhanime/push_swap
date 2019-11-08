@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/01 20:20:11 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 00:19:36 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ typedef struct	s_ps
 	int			pivot;
 }				t_ps;
 
-
 /*
 ** Data Structure Management Functions
 */
 
-t_ps		*init_ps(t_ps *ps, int len);
-int			*init_tab(int *tab, int size);
+void		init_ps(t_ps *ps, int len);
+int			*init_stack(int *tab, int size);
+char		**init_tab(char **tab);
 int			free_ps(t_ps *ps);
 
 /*
@@ -104,6 +104,8 @@ int		push_a_to_b(t_ps *ps, int size);
 int		push_b_to_a(t_ps *ps, int size);
 int		*compute_mediane(t_ps *ps);
 int		pivot_pickup(t_ps *ps);
+char	**get_arg(char ** av);
+int		arg_size(char **arg);
 
 /*
 ** Debugging Functions

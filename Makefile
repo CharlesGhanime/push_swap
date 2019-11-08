@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/10/30 16:18:17 by cghanime         ###   ########.fr        #
+#    Updated: 2019/11/08 01:40:20 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC_NAME =	check_tabs.c \
 			reverse_rotate.c \
 			rotate.c \
 			swap.c \
+			get_arg.c \
 
 DBUG_NAME = print_stack.c \
 
@@ -78,7 +79,6 @@ $(LIB):
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(DBUG_PATH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) -o $@ -c $<
-
 
 clean:
 	@make clean -C $(LIB_PATH)

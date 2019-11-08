@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/01 16:24:23 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 00:10:42 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int		*compute_mediane(t_ps *ps)
 
 	med = (int *)malloc(sizeof(int) * ps->len_a);
 	tmp = (int *)malloc(sizeof(int) * ps->len_a);
-	med = init_tab(med, ps->len_a);
-	tmp = init_tab(tmp, ps->len_a);
+	med = init_stack(med, ps->len_a);
+	tmp = init_stack(tmp, ps->len_a);
 	ps->a = swapping(ps->a, ps->len_a);
 	i = ps->len_a;
 	j = 0;
