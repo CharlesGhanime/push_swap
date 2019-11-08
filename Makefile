@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/11/08 01:40:20 by cghanime         ###   ########.fr        #
+#    Updated: 2019/11/08 05:18:43 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC_NAME =	check_tabs.c \
 			reverse_rotate.c \
 			rotate.c \
 			swap.c \
-			get_arg.c \
+#			get_arg.c \
 
 DBUG_NAME = print_stack.c \
 

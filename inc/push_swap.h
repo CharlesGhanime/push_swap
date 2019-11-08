@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/08 00:19:36 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 06:06:49 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@
 #include <limits.h>
 #include "../libft/libft.h"
 
-#define end UINT_MAX 
-#define ptf printf;
-#define cc "printf";
-#define ptfa print_stack("ps->a", ps->a, ps->len_a);
-#define ptfb print_stack("ps->b", ps->b, ps->len_b);
-#define ptfla printf("len_a = %d\n", ps->len_a);
-#define ptflb printf("len_b = %d\n", ps->len_b);
-#define filltab int i=0; while (argc > 1) { ps->a[i] = ft_atoi(argv[i + 1]); argc--; i++;}
+# define FALSE		0
+# define TRUE		1
+# define end		UINT_MAX
+# define ptf		printf("Hello there!\n")
+# define ptfa		print_stack("ps->a", ps->a, ps->len_a)
+# define ptfb		print_stack("ps->b", ps->b, ps->len_b)
+# define ptfla		printf("len_a = %d\n", ps.len_a)
+# define ptflb		printf("len_b = %d\n", ps.len_b)
+# define filltab	int i=0; while (argc > 1) { ps->a[i] = ft_atoi(argv[i + 1]); argc--; i++;}
 
 /*
 ** Data Structures
@@ -104,7 +105,7 @@ int		push_a_to_b(t_ps *ps, int size);
 int		push_b_to_a(t_ps *ps, int size);
 int		*compute_mediane(t_ps *ps);
 int		pivot_pickup(t_ps *ps);
-char	**get_arg(char ** av);
+//char	**get_arg(char ** av);
 int		arg_size(char **arg);
 
 /*

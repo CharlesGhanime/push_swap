@@ -6,13 +6,56 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/08 02:46:40 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 06:24:26 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		arg_size(char **arg)
+static void		ft_join_tab(char **tab, char **s)
+{
+	int		i;
+
+	i = 0;
+	while (tab[i])
+	{
+		if (!(ft_str_isnumeric(tab[i]) || (tab[i][0] == '-'
+		&& ft_str_isnumeric(tab[i] + 1))))
+		{
+			ft_free_tab(tab);
+			ft_putendl_fd("Error", 2);
+			exit(1);
+		}
+		//		*s = ft_strjoinfree(*s, tab[i], 1);
+		*s = ft_strjoin(*s, tab[i]);
+		//		*s = ft_strjoinfree(*s, "\n", 1);
+		*s = ft_strjoin(*s, "\n");
+		i++;
+	}
+}
+
+static char		**get_arg(char **av)
+{
+	char	**arg;
+	char	**tab;
+	char	*s;
+	int		counter;
+
+	s = NULL;
+	counter = 0;
+	while (av[counter])
+	{
+		tab = ft_strsplit(av[counter], ' ');
+		ft_join_tab(tab, &s);
+		ft_free_tab(tab);
+		counter++;
+	}
+	arg = ft_strsplit(s, '\n');
+	ft_strdel(&s);
+	return (arg);
+}
+
+int				arg_size(char **arg)
 {
 	int		i;
 
@@ -22,18 +65,23 @@ int		arg_size(char **arg)
 	return (i);
 }
 
-int		main(int argc, char **argv)
+int				main(int ac, char **av)
 {
 	t_ps	ps;
 	char	**arg;
 
-//	arg = NULL;
-//	arg = init_tab(arg);
-	if (argc == 1)
+	//	arg = NULL;
+	//	arg = init_tab(arg);
+	if (ac == 1)
 		return (0);
-	arg = get_arg(argv + 1);
-	init_ps(&ps, arg_size(arg));
+	//	init_ps(&ps, arg_size(arg));
+	ps.a = NULL;
+	ps.b = NULL;
+	arg = get_arg(av + 1);
+	ps.args_nb = arg_size(arg);
+	ps.len_a = ps.args_nb;
+	ptfla;
 	master_a_to_b(&ps, ps.len_a);
-	free_ps(&ps);
+	//	free_ps(&ps);
 	return (0);
 }
