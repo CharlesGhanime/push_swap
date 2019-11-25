@@ -6,16 +6,16 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 09:54:43 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 16:29:35 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/25 15:55:38 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		check_rising(int *stack, int stack_size)
+int64_t		check_rising(int64_t *stack, size_t stack_size)
 {
-	int i;
-	int count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -30,10 +30,10 @@ int		check_rising(int *stack, int stack_size)
 	return (0);
 }
 
-int		check_falling(int *stack, int stack_size)
+int64_t		check_falling(int64_t *stack, size_t stack_size)
 {
-	int i;
-	int count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;

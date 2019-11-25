@@ -6,21 +6,21 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:41:25 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/08 00:10:42 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/25 16:28:05 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 //#include <libc.h>
 
-static int*		swapping(int *tab, int len)
+static int64_t		*swapping(int64_t *tab, size_t len)
 {
-	int i;
-	int j;
-	int *tmp;
+	size_t	i;
+	size_t	j;
+	int64_t *tmp;
 
-	tmp = (int *)malloc(sizeof(int) * len);
-	tmp = (int *)malloc(sizeof(int) * len);
+	tmp = (int64_t *)malloc(sizeof(int64_t) * len);
+	tmp = (int64_t *)malloc(sizeof(int64_t) * len);
 	i = len;
 	j = 0;
 	while (i > 0)
@@ -38,23 +38,23 @@ static int*		swapping(int *tab, int len)
 	return (tab);
 }
 
-int		*compute_mediane(t_ps *ps)
+int64_t		*compute_mediane(t_ps *ps)
 {
-	int *med;
-	int *tmp;
-	int i;
-	int j;
+	int64_t *med;
+	int64_t *tmp;
+	int64_t i;
+	int64_t j;
 
-	med = (int *)malloc(sizeof(int) * ps->len_a);
-	tmp = (int *)malloc(sizeof(int) * ps->len_a);
+	med = (int64_t *)malloc(sizeof(int64_t) * ps->len_a);
+	tmp = (int64_t *)malloc(sizeof(int64_t) * ps->len_a);
 	med = init_stack(med, ps->len_a);
 	tmp = init_stack(tmp, ps->len_a);
 	ps->a = swapping(ps->a, ps->len_a);
 	i = ps->len_a;
 	j = 0;
 	printf("compute_mediane\n");
-	printf("compute_mediane ps->len_a = %d\n", ps->len_a);
-	ptfa;
+	printf("compute_mediane ps->len_a = %ld\n", ps->len_a);
+	PSA;
 	while (i > 0)
 	{
 		if (ps->a[j] < ps->a[j - 1])
@@ -75,7 +75,7 @@ int		*compute_mediane(t_ps *ps)
 	return (ps->a);
 }
 
-int		pivot_pickup(t_ps *ps)
+int64_t		pivot_pickup(t_ps *ps)
 {
 	if (ps->len_a % 2 != 0)
 		ps->pivot = ps->mediane[(ps->len_a / 2)];

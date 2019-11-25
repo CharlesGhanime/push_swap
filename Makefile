@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/11/08 05:18:43 by cghanime         ###   ########.fr        #
+#    Updated: 2019/11/25 16:34:18 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,13 +81,13 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(DBUG_PATH)/%.c
 	@$(CC) -o $@ -c $<
 
 clean:
-	@make clean -C $(LIB_PATH)
+	@$(MAKE) clean -C $(LIB_PATH)
 	@rm -rf $(OBJ)
 	@printf "$(RED)[Cleaning Push_Swap Objects...]$(RESET)		"
 	@printf "$(BOLD)$(GREEN)[OK]\033[0m$(RESET)$(/BOLD)\n"
 
 fclean: clean
-	@make fclean -C $(LIB_PATH)
+	@$(MAKE) fclean -C $(LIB_PATH)
 	@rm -rf ./obj $(NAME)
 	@printf "$(RED)[Cleaning Push_Swap Executable...]$(RESET)	"
 	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
@@ -98,5 +98,8 @@ norme:
 	@norminette $(SRC) $(LIB) $(INC)
 	@printf "$(YELLOW)[Push_Swap Norminette...]$(RESET)		"
 	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
+
+valgrind:
+	@valgrind -g --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origin=yes ./$(NAME) 1 5 2 6 9 8
 
 .PHONY: all clean fclean re norme

@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/08 06:24:26 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/25 19:10:31 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static char		**get_arg(char **av)
 	return (arg);
 }
 
-int				arg_size(char **arg)
+uint64_t				arg_size(char **arg)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
 	while (arg && arg[i])
@@ -71,17 +71,23 @@ int				main(int ac, char **av)
 	char	**arg;
 
 	//	arg = NULL;
-	//	arg = init_tab(arg);
+	init_tab(&arg);
+//	ft_print_tab(arg);
 	if (ac == 1)
 		return (0);
-	//	init_ps(&ps, arg_size(arg));
-	ps.a = NULL;
-	ps.b = NULL;
+//	ps.a = NULL;
+//	ps.b = NULL;
 	arg = get_arg(av + 1);
+	PTF("ps.arg_nb = %lld | arg_size = %lld\n", ps.args_nb, arg_size(arg));
+	init_ps(&ps, arg_size(arg));
 	ps.args_nb = arg_size(arg);
 	ps.len_a = ps.args_nb;
-	ptfla;
+	ps.a = fill_stack_a(ps.a, arg);
+	PFLA;
+	ft_print_tab(arg);
+	PTF("coucou avant la master\n");
 	master_a_to_b(&ps, ps.len_a);
+	PTF("coucou apres la master\n");
 	//	free_ps(&ps);
 	return (0);
 }

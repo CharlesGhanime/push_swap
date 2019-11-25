@@ -6,13 +6,13 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 14:58:13 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/31 20:27:27 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/25 16:25:07 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		print_stack(char *name, int *stack, size_t len)
+int64_t		print_stack(char *name, int64_t *stack, size_t len)
 {
 	size_t i;
 	size_t counter;
@@ -23,14 +23,14 @@ int		print_stack(char *name, int *stack, size_t len)
 		return (0);
 	else if (len == 1)
 	{
-		printf("%s[%ld] = %d\n", name, i, stack[i]);
+		printf("%s[%ld] = %lld\n", name, i, stack[i]);
 		return (0);
 	}
 	else
 	{
 		while (i < len)
 		{
-			printf("%s[%ld] = %d\n", name, i, stack[i]);
+			printf("%s[%ld] = %lld\n", name, i, stack[i]);
 			counter++;
 			i++;
 		}

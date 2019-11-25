@@ -12,10 +12,10 @@
 
 #include "../inc/push_swap.h"
 
-int		reverse_rotate_a(t_ps *ps)
+int64_t		reverse_rotate_a(t_ps *ps)
 {
-	int *tmp;
-	int i;
+	int64_t *tmp;
+	size_t i;
 
 	tmp = NULL;
 	tmp[0] = ps->a[ps->len_a];
@@ -31,10 +31,10 @@ int		reverse_rotate_a(t_ps *ps)
 	return (0);
 }
 
-int		reverse_rotate_b(t_ps *ps)
+int64_t		reverse_rotate_b(t_ps *ps)
 {
-	int *tmp;
-	int i;
+	int64_t *tmp;
+	size_t i;
 
 	tmp = NULL;
 	tmp[0] = ps->b[ps->len_b];
@@ -50,10 +50,10 @@ int		reverse_rotate_b(t_ps *ps)
 	return (0);
 }
 
-int		reverse_rotate_r(t_ps *ps)
+int64_t		reverse_rotate_r(t_ps *ps)
 {
-	int *tmp;
-	int i;
+	int64_t *tmp;
+	size_t i;
 
 	tmp = NULL;
 	tmp[0] = ps->a[ps->len_a];

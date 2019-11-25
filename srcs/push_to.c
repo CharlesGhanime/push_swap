@@ -6,23 +6,23 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 16:46:29 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/31 19:44:40 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/25 16:27:34 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		push_a_to_b(t_ps *ps, int size)
+int64_t		push_a_to_b(t_ps *ps, size_t size)
 {
-	int i;
-	int push_counter;
-	int rot_counter;
+	size_t	i;
+	size_t	push_counter;
+	size_t	rot_counter;
 
 	i = 0;
 	push_counter = 0;
 	rot_counter = 0;
 	printf("push a to b\n");
-	ptfa;
+	PSA;
 	while (i < size)
 	{
 		if (ps->a[i] <= ps->pivot)
@@ -44,7 +44,7 @@ int		push_a_to_b(t_ps *ps, int size)
 			reverse_rotate_a(ps);
 			i++;
 		}
-	int r = 0;
+	size_t r = 0;
 	while (r < ps->len_b)
 	{
 		r++;
@@ -52,10 +52,10 @@ int		push_a_to_b(t_ps *ps, int size)
 	return (push_counter);
 }
 
-int		push_b_to_a(t_ps *ps, int size)
+int64_t		push_b_to_a(t_ps *ps, size_t size)
 {
-	int i;
-	int push_counter;
+	size_t i;
+	size_t push_counter;
 
 	i = 0;
 	push_counter= 0;

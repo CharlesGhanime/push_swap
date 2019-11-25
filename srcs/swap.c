@@ -6,17 +6,17 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:34:01 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 17:00:20 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/25 16:16:21 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		swap_a(t_ps *ps)
+int64_t		swap_a(t_ps *ps)
 {
-	int tmp;
-	int i;
-	int j;
+	int64_t tmp;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 1;
@@ -27,11 +27,12 @@ int		swap_a(t_ps *ps)
 	return (0);
 }
 
-int		swap_b(t_ps *ps)
+int64_t		swap_b(t_ps *ps)
 {
-	int tmp;
-	int i;
-	int j;
+	int64_t tmp;
+	size_t i;
+	size_t j;
+
 
 	i = 0;
 	j = 1;
@@ -42,12 +43,12 @@ int		swap_b(t_ps *ps)
 	return (0);
 }
 
-int		swap_ss(t_ps *ps)
+int64_t		swap_ss(t_ps *ps)
 {
-	int tmp_a;
-	int tmp_b;
-	int i;
-	int j;
+	int64_t tmp_a;
+	int64_t tmp_b;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 1;

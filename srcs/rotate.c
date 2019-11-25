@@ -6,16 +6,16 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 00:32:27 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/09 16:22:41 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/25 16:15:00 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		rotate_a(t_ps *ps)
+int64_t		rotate_a(t_ps *ps)
 {
-	int *tmp;
-	int i;
+	int64_t		*tmp;
+	size_t		i;
 
 	tmp = ps->a;
 	i = ps->len_a;
@@ -30,10 +30,10 @@ int		rotate_a(t_ps *ps)
 	return (0);
 }
 
-int		rotate_b(t_ps *ps)
+int64_t		rotate_b(t_ps *ps)
 {
-	int *tmp;
-	int i;
+	int64_t		*tmp;
+	size_t		i;
 
 	tmp = ps->b;
 	i = ps->len_b;
@@ -48,10 +48,10 @@ int		rotate_b(t_ps *ps)
 	return (0);
 }
 
-int		rotate_r(t_ps *ps)
+int64_t		rotate_r(t_ps *ps)
 {
-	int *tmp;
-	int i;
+	int64_t		*tmp;
+	size_t		i;
 
 	tmp = ps->a;
 	i = ps->len_a;
