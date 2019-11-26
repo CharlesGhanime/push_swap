@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:42:34 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/25 19:16:38 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/26 19:26:54 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	init_ps(t_ps *ps, size_t len)
 	ps->mediane = NULL;
 	ps->a = (int64_t *)malloc(sizeof(int64_t) * len);
 	ps->b = (int64_t *)malloc(sizeof(int64_t) * len);
-	ps->a = init_stack(ps->a, len);
-	ps->b = init_stack(ps->b, len);
+	init_stack(&ps->a, len);
+	init_stack(&ps->b, len);
 	ps->len_a = len;
 	ps->len_b = 0;
 	ps->push_len = 0;
@@ -30,18 +30,17 @@ void	init_ps(t_ps *ps, size_t len)
 	ps->pivot = 0;
 }
 
-int64_t		*init_stack(int64_t *tab, size_t size)
+void		init_stack(int64_t **tab, size_t size)
 {
 	size_t i;
 
 	i = 0;
 	while (i < size)
 	{
-		tab[i] = 0;
+		tab[0][i] = 0;
 		i++;
 	}
-	tab[i] = END;
-	return (tab);
+	tab[0][i] = END;
 }
 
 void	init_tab(char ***tab)
@@ -56,20 +55,32 @@ void	init_tab(char ***tab)
 	}
 }
 
-int64_t		*fill_stack_a(int64_t *stack_a, char **arg)
+size_t		stack_len(int64_t *stack)
+{
+	size_t i;
+	size_t len;
+
+	i = 0;
+	len = 0;
+	while (stack[i] != END)
+	{
+		len++;
+		i++;
+	}
+	return (len);
+}
+
+void		fill_stack_a(int64_t **stack_a, char **arg)
 {
 	size_t	i;
 
 	i = 0;
 	while (arg[i] != NULL)
 	{
-//		PTF("COUCOU\n");
-		stack_a[i] = ft_atoi(arg[i]);
-//		PTF("*stack_a[%lu] = %lld\n", i, stack_a[i]);
+		stack_a[0][i] = ft_atoi(arg[i]);
 		i++;
 	}
-	stack_a[i] = (int64_t)END;
-	return (stack_a);
+	stack_a[0][i] = (int64_t)END;
 }
 /*
 int main()

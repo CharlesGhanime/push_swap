@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/25 19:18:52 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/26 19:26:26 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct	s_ps
 */
 
 void		init_ps(t_ps *ps, size_t len);
-int64_t		*init_stack(int64_t *tab, size_t size);
+void		init_stack(int64_t **tab, size_t size);
 void		init_tab(char ***tab);
 int64_t		free_ps(t_ps *ps);
 
@@ -106,7 +106,7 @@ int64_t		push_b_to_a(t_ps *ps, size_t size);
 int64_t		*compute_mediane(t_ps *ps);
 int64_t		pivot_pickup(t_ps *ps);
 uint64_t	arg_size(char **arg);
-int64_t		*fill_stack_a(int64_t *stack_a, char **arg);
+void		fill_stack_a(int64_t **stack_a, char **arg);
 //char	**get_arg(char ** av);
 
 /*
