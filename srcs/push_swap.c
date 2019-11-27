@@ -82,7 +82,7 @@ int				main(int ac, char **av)
 	init_ps(&ps, arg_size(arg));
 	ps.args_nb = arg_size(arg);
 	ps.len_a = ps.args_nb;
-	ps.a = fill_stack_a(ps.a, arg);
+	fill_stack_a(&ps.a, arg);
 	PFLA;
 	ft_print_tab(arg);
 	PTF("coucou avant la master\n");

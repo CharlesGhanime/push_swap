@@ -24,10 +24,10 @@ int64_t		*master_a_to_b(t_ps *ps, size_t size)
 */
 //	PSA;
 	PTF("coucou avant mediane");
-	ps->mediane = compute_mediane(ps);
+	ps->mediane = ps->a; //compute_mediane(ps);
 	PTF("ptf apres mediane");
 //	PSA;
-	ps->pivot = pivot_pickup(ps);
+	ps->pivot = (int64_t)3; //pivot_pickup(ps);
 //	PSA;
 	recur_size_a = push_a_to_b(ps, size);
 /* A VOIR PLUS TARD */
