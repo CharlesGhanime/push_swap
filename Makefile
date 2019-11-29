@@ -6,7 +6,7 @@
 #    By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 05:39:25 by cghanime          #+#    #+#              #
-#    Updated: 2019/11/25 16:34:18 by cghanime         ###   ########.fr        #
+#    Updated: 2019/11/29 00:52:09 by cghanime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ DBUG_PATH = ./.debug
 
 SRC_NAME =	check_tabs.c \
 			check_twins.c \
-			compute_mediane.c \
 			init.c \
 			master.c \
 			push.c \
@@ -35,6 +34,8 @@ SRC_NAME =	check_tabs.c \
 			reverse_rotate.c \
 			rotate.c \
 			swap.c \
+			bubblesort.c \
+#			compute_mediane.c \
 #			get_arg.c \
 
 DBUG_NAME = print_stack.c \
@@ -68,7 +69,7 @@ BOLD = \e[1m
 
 all: $(NAME)
 
-$(NAME): $(LIB) $(OBJ) $(SRC) $(DBUG)
+$(NAME): $(LIB) $(INC) $(OBJ) $(SRC) $(DBUG)
 	@$(CC) $(FLAGS) $(LIB) $(SRC) $(DBUG) -o $@
 	@printf "$(GREEN)[Compiling Push_Swap...]$(RESET)		"
 	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"

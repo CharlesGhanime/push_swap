@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:48:50 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/25 19:10:31 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/29 00:59:32 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				main(int ac, char **av)
 	init_ps(&ps, arg_size(arg));
 	ps.args_nb = arg_size(arg);
 	ps.len_a = ps.args_nb;
-	ps.a = fill_stack_a(ps.a, arg);
+	fill_stack_a(&ps.a, arg);
 	PFLA;
 	ft_print_tab(arg);
 	PTF("coucou avant la master\n");

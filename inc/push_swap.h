@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 04:28:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/26 19:26:26 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/29 01:33:16 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ typedef struct	s_ps
 	int64_t			*a;
 	int64_t			*b;
 	int64_t			*mediane;
-	size_t		len_a;
-	size_t		len_b;
-	size_t		push_len;
-	size_t		recur_size;
-	uint64_t	args_nb;
-	size_t		mv_nb;
-	int64_t		pivot;
-}				t_ps;
+	size_t			len_a;
+	size_t			len_b;
+	size_t			push_len;
+	size_t			recur_size;
+	uint64_t		args_nb;
+	size_t			mv_nb;
+	int64_t			pivot;
+}					t_ps;
 
 /*
 ** Data Structure Management Functions
@@ -103,10 +103,11 @@ int64_t		*master_a_to_b(t_ps *ps, size_t size);
 int64_t		*master_b_to_a(t_ps *ps, size_t size);
 int64_t		push_a_to_b(t_ps *ps, size_t size);
 int64_t		push_b_to_a(t_ps *ps, size_t size);
-int64_t		*compute_mediane(t_ps *ps);
 int64_t		pivot_pickup(t_ps *ps);
 uint64_t	arg_size(char **arg);
 void		fill_stack_a(int64_t **stack_a, char **arg);
+int64_t		*bubblesort(int64_t *stack, size_t len);
+//int64_t		*compute_mediane(t_ps *ps);
 //char	**get_arg(char ** av);
 
 /*

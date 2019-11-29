@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 16:54:28 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/25 17:15:24 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/29 02:01:33 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ int64_t		*master_a_to_b(t_ps *ps, size_t size)
 */
 //	PSA;
 	PTF("coucou avant mediane");
-	ps->mediane = compute_mediane(ps);
+	ps->mediane = bubblesort(ps->a, ps->len_a);
 	PTF("ptf apres mediane");
 //	PSA;
+	PTF("ps->len_a = %zu", ps->len_a);
 	ps->pivot = pivot_pickup(ps);
+	PTF("ALLO PIVOT\n");
+	PTF("ps->pivot = %lld\n", ps->pivot);
 //	PSA;
 	recur_size_a = push_a_to_b(ps, size);
 /* A VOIR PLUS TARD */
@@ -49,7 +52,7 @@ int64_t		*master_b_to_a(t_ps *ps, size_t size)
 	recur_size_b = push_b_to_a(ps, size);
 	if (size > 0)
 	{
-		ps->mediane = compute_mediane(ps);
+		ps->mediane = bubblesort(ps->a, ps->len_a) ;
 		ps->pivot = pivot_pickup(ps);
 		master_a_to_b(ps, recur_size_b);
 	}
