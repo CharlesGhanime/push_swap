@@ -24,7 +24,7 @@ static void		swapping(int64_t **tab, size_t len)
 	j = 0;
 	while (i > 0)
 	{
-		if (tab[j] > tab[j - 1] && i > 0)
+		if (tab[j] < tab[j - 1] && i > 0)
 		{
 			tmp[0] = tab[0][j];
 			tab[0][j] = tab[0][j - 1];
@@ -57,6 +57,7 @@ int64_t		*compute_mediane(t_ps *ps)
 	{
 		if (ps->a[j] < ps->a[j - 1])
 		{
+			PTF("i = %lld | j = %lld\n", i, j);
 			if (i == 1 || i == 0)
 				return (ps->a);
 			else
@@ -83,11 +84,10 @@ int64_t		pivot_pickup(t_ps *ps)
 	}
 	return (ps->pivot);
 }
-
+/*
 int main()
 {
 	t_ps		ps;
-	int64_t		med;
 
 	ps.a = malloc(sizeof(int64_t) * 5 + 1);
 	ps.a[0] = 4;
@@ -97,6 +97,7 @@ int main()
 	ps.a[4] = END;
 	ps.len_a = 6;
 	compute_mediane(&ps);
-	PTF("med = %lld\n", med);
+//	PTF("ps.a = %lld\n", ps.a);
 	return (0);
 }
+*/
