@@ -27,7 +27,7 @@ int64_t		reverse_rotate_a(t_ps *ps)
 		else
 			ps->a[i + 1] = ps->a[i];
 	}
-	write (1, "rrps->a\n", 4);
+	write (1, "rra\n", 4);
 	return (0);
 }
 
@@ -46,7 +46,7 @@ int64_t		reverse_rotate_b(t_ps *ps)
 		else
 			ps->b[i + 1] = ps->b[i];
 	}
-	write (1, "rrps->b\n", 4);
+	write (1, "rrb\n", 4);
 	return (0);
 }
 
